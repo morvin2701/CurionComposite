@@ -9,6 +9,97 @@ export function initUI() {
     initCounters();
     initSpotlight();
     initMobileMenu();
+    initProductInteractions();
+}
+
+function initProductInteractions() {
+    // 1. Filter Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card-3d');
+
+    if (filterBtns.length) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter cards
+                const filter = btn.getAttribute('data-filter');
+
+                productCards.forEach(card => {
+                    // Reset animation state
+                    gsap.killTweensOf(card);
+
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                        gsap.fromTo(card,
+                            { opacity: 0, y: 30, scale: 0.95 },
+                            { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power2.out", clearProps: "transform" }
+                        );
+                    } else {
+                        gsap.to(card, {
+                            opacity: 0,
+                            y: 20,
+                            scale: 0.9,
+                            duration: 0.3,
+                            onComplete: () => { card.style.display = 'none'; }
+                        });
+                    }
+                });
+            });
+        });
+    }
+
+    // 2. 3D Tilt Effect
+    productCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Calculate rotation (max 10 degrees)
+            const xPct = x / rect.width;
+            const yPct = y / rect.height;
+
+            const rotateX = (0.5 - yPct) * 10; // Flipped Y for natural tilt
+            const rotateY = (xPct - 0.5) * 10;
+
+            // Apply transform
+            gsap.to(card, {
+                rotationX: rotateX,
+                rotationY: rotateY,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+
+            // Move placeholder/hotspots for parallax
+            const visual = card.querySelector('.card-image-placeholder');
+            if (visual) {
+                gsap.to(visual, {
+                    x: (xPct - 0.5) * 20,
+                    y: (yPct - 0.5) * 20,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // Reset on leave
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotationX: 0,
+                rotationY: 0,
+                duration: 0.8,
+                ease: "elastic.out(1, 0.5)"
+            });
+
+            const visual = card.querySelector('.card-image-placeholder');
+            if (visual) {
+                gsap.to(visual, { x: 0, y: 0, duration: 0.8, ease: "elastic.out(1, 0.5)" });
+            }
+        });
+    });
 }
 
 function initMobileMenu() {
