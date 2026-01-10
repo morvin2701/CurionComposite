@@ -19,7 +19,7 @@
 
   <div id="app">
     <nav class="navbar">
-      <div class="container nav-container">
+      <div class="nav-container">
         <div class="logo">CURION <span class="text-primary">COMPOSITES</span></div>
         <ul class="nav-links">
           <li><a href="/" class="active">Home</a></li>
@@ -28,49 +28,75 @@
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
         </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
 
-    <section id="hero" class="premium-hero">
-      <!-- Video Carousel Background -->
-      <div class="hero-video-carousel">
+
+    <section id="hero" class="desktop-hero">
+      <!-- Video Background -->
+      <div class="hero-video-bg">
         <video class="hero-video active" autoplay muted loop playsinline>
-          <source
-            src="https://omo-oss-cdn.thefastfile.com/portal-saas/pg2024111518422443700/cms/vedio/cdc84cc5-fcd5-4451-af68-dc624cbdf6b1.mp4?sign=1768025954-7cdca00a70b0d575d54b77020a657e9d-0-5c4da302b1c8c3444990ea4d410c86bf&Expires=1768025954&Signature=Fo9eoM9-L2vdcGHuyfzn-YZudLlCjm9~0DTErgjPqZqaVii8A0QUCP0NH0pGaDoSEI0FjwP1E6thYxvt4-KhxFU3hU91PjUWp~ZW~-4RmTC8MmohsJQbTlDYdBWvOGudirD1qYUgXL9k54PcUHBXq2l92jm7WbuM~ZDd1n7viM-uBQYNHqXtPZMgFn2c~ZkpMR1nkJ71lhrg4xQJ63i5bhRCAT68rH0Mhd5MJU~MUgo~Xd1i2byBm07KFFK3CgME~NV6O1wd-mvb1Xv8JnjNt2C-Z6m-xrfrkYFIOsshzeyqlMrQ1S2rDZFwy7fGrsSTWxbSOzY~qzrEIFz2zh-4Qw&Key-Pair-Id=KITUBNZ25ERQX">
+          <source src="/assets/images/hero.mp4" type="video/mp4">
         </video>
-        <video class="hero-video" muted loop playsinline>
-          <source
-            src="https://omo-oss-cdn.thefastfile.com/portal-saas/pg2024111518422443700/cms/vedio/e8b26205-a84e-4908-8b48-bbb53a7afdf6.mp4?sign=1768025954-ac116babab38e67a24d0ea10cdefc94a-0-56b92df0a26264126e4e50d47935d7c7&Expires=1768025954&Signature=mxvM-1yvNoFtaSBQ4uJjSaP4EM5x02iJ9bPnAtOlTt7zCt4s~4zcbyZDSUrTAxbFFHq88NtEnWXu6F5aUz0t3vRClgJkevXAGd8pLK43xZ5M0jOBp93D3zONn2pYQ7Pd71gxRMmas7Ix8M7ZADw7z-MetIndSA9VX1rGj2bWb8eO-z25lVef7H5REYwbQbOeWi2EaYLUOZXPxAfMK4Iio336PkN1dIdaAg0n0eLmL~SSJJJj6VrU6EGtwdUdrJagf1Rfg4DZ6oQXnZmS1QdXBP1FGeCdUl7-mNFk4iEuyNBoKEwuxv3lT32I47sNWWA12P6WJgkZ588lu2~Ux-CGdQ&Key-Pair-Id=KITUBNZ25ERQX">
-        </video>
-        <div class="carousel-overlay"></div>
+        <div class="hero-overlay"></div>
       </div>
 
-      <div class="container hero-content">
-        <span class="hero-tagline">NEXT-GENERATION MATERIALS</span>
-        <h1 class="hero-title">REDEFINING <span class="text-outline">SOLAR</span> <br> INFRASTRUCTURE</h1>
-        <p class="hero-subtitle">World-class Polyurethane Composite Frames designed for extreme durability and zero
-          corrosion.</p>
-        <div class="hero-actions">
-          <a href="/products.html" class="btn btn-primary">Discover Solutions</a>
-          <a href="/contact.html" class="btn btn-outline">Talk to an Expert</a>
+      <!-- Hero Content -->
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left: Text Content -->
+          <div class="hero-text">
+            <div class="hero-label">
+              <span class="label-line"></span>
+              <span class="label-text">NEXT-GENERATION MATERIALS</span>
+            </div>
+
+            <h1 class="hero-heading">
+              REDEFINING<br>
+              <span class="hero-highlight">SOLAR</span><br>
+              INFRASTRUCTURE
+            </h1>
+
+            <p class="hero-description">
+              World-class Polyurethane Composite Frames designed for extreme durability and zero corrosion.
+            </p>
+
+            <div class="hero-cta">
+              <a href="/products.html" class="btn-hero-primary">
+                Discover Solutions
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="/contact.html" class="btn-hero-secondary">Talk to an Expert</a>
+            </div>
+          </div>
+
+          <!-- Right: Visual Space (for video to show through) -->
+          <div class="hero-visual"></div>
         </div>
-      </div>
 
-      <div class="hero-footer">
-        <div class="container hero-stats">
-          <div class="h-stat">
-            <span class="h-val">85%</span>
-            <span class="h-lbl">Lower Carbon</span>
+        <!-- Stats Bar -->
+        <div class="hero-stats-bar">
+          <div class="stat-item">
+            <span class="stat-value">85%</span>
+            <span class="stat-label">Lower Carbon</span>
           </div>
-          <div class="h-divider"></div>
-          <div class="h-stat">
-            <span class="h-val">TÜV</span>
-            <span class="h-lbl">Certified Quality</span>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">TÜV</span>
+            <span class="stat-label">Certified Quality</span>
           </div>
-          <div class="h-divider"></div>
-          <div class="h-stat">
-            <span class="h-val">25+</span>
-            <span class="h-lbl">Years Lifespan</span>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">25+</span>
+            <span class="stat-label">Years Lifespan</span>
           </div>
         </div>
       </div>
@@ -90,50 +116,14 @@
         <span class="m-hero-tagline">FUTURE OF SOLAR</span>
         <h1 class="m-hero-title">REDEFINING<br><span class="text-primary">DURABILITY</span></h1>
 
-        <!-- Key Points List -->
-        <div class="m-hero-points">
-          <div class="m-point-item">
-            <div class="m-point-icon">
-              <!-- Eye Icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            </div>
-            <div class="m-point-text">
-              <strong>OUR VISION</strong>
-              <span>To be a global leader in next-generation PU composite Solar frames.</span>
-            </div>
-          </div>
+        <!-- Premium Description Card -->
+        <p class="m-hero-subtitle">
+          We are revolutionizing solar infrastructure by replacing heavy, corrosive aluminum frames with advanced
+          Polyurethane Composites.
+          <br><br>
+          Experience unmatched strength, zero corrosion, and superior insulation—designed for the future of energy.
+        </p>
 
-          <div class="m-point-item">
-            <div class="m-point-icon">
-              <!-- Target Icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="6" />
-                <circle cx="12" cy="12" r="2" />
-              </svg>
-            </div>
-            <div class="m-point-text">
-              <strong>OUR MISSION</strong>
-              <span>Enabling low-carbon infrastructure with UN SDG-aligned composite solutions.</span>
-            </div>
-          </div>
-
-          <div class="m-point-item">
-            <div class="m-point-icon">
-              <!-- Diamond Icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 3h12l4 6-10 13L2 9z" />
-              </svg>
-            </div>
-            <div class="m-point-text">
-              <strong>OUR PURPOSE</strong>
-              <span>Creating long-term value with high-performance frames for a resilient future.</span>
-            </div>
-          </div>
-        </div>
         <a href="/products.html" class="btn btn-primary m-hero-btn">Explore Solutions</a>
 
         <!-- Premium Stats Row -->
