@@ -3145,13 +3145,13 @@ section {
     z-index: 2;
 }
 
-.hero-text {
+.products-hero .hero-text {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
 }
 
-.hero-text h1 {
+.products-hero .hero-text h1 {
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
@@ -3161,7 +3161,7 @@ section {
     text-transform: uppercase;
 }
 
-.hero-text p {
+.products-hero .hero-text p {
     font-size: 1.3rem;
     color: var(--color-text-muted);
     max-width: 700px;
