@@ -15,15 +15,94 @@
 
     <div id="app">
         <nav class="navbar">
-            <div class="container nav-container">
-                <div class="logo">CURION <span class="text-primary">COMPOSITES</span></div>
+            <div class="nav-container">
+                <a href="/" class="logo-wrapper">
+                    <svg class="brand-logo" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 5L33 12.5V27.5L20 35L7 27.5V12.5L20 5Z" stroke="var(--color-primary)"
+                            stroke-width="2.5" fill="rgba(211, 47, 47, 0.1)" />
+                        <path d="M20 12L27 16V24L20 28L13 24V16L20 12Z" fill="var(--color-primary)" />
+                        <path d="M28 10L33 5M7 5L12 10M20 35V40" stroke="var(--color-primary)" stroke-width="1.5"
+                            opacity="0.5" />
+                    </svg>
+                    <div class="brand-text">
+                        <span class="brand-name">CURION</span>
+                        <span class="brand-suffix">COMPOSITES</span>
+                    </div>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products.html" class="active">Products</a></li>
-                    <li><a href="/technology.html">Technology</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li>
+                        <a href="/">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products.html" class="active">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/technology.html">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Technology</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about.html">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                            </span>
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact.html">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
 
@@ -59,16 +138,9 @@
                         <div class="card-content">
                             <div class="card-visual">
                                 <div class="card-image-placeholder">
-                                    <!-- Placeholder for Product Image (e.g. Frame Corner) -->
-                                    <svg viewBox="0 0 100 100" class="placeholder-icon">
-                                        <rect x="20" y="20" width="60" height="60" rx="4" stroke="currentColor"
-                                            stroke-width="2" fill="none" />
-                                        <line x1="20" y1="20" x2="40" y2="40" stroke="currentColor" />
-                                        <line x1="80" y1="20" x2="60" y2="40" stroke="currentColor" />
-                                        <line x1="80" y1="80" x2="60" y2="60" stroke="currentColor" />
-                                        <line x1="20" y1="80" x2="40" y2="60" stroke="currentColor" />
-                                        <rect x="40" y="40" width="20" height="20" fill="currentColor" opacity="0.1" />
-                                    </svg>
+                                    <img src="/assets/images/generated/composite_frame_corner.png"
+                                        alt="Composite Frame Corner" class="product-img-3d"
+                                        onerror="this.src='data:image/svg+xml;base64,...'">
                                 </div>
                                 <div class="hotspot" style="top: 30%; left: 40%;" data-tooltip="Reinforced Corner Key">
                                     <div class="hotspot-dot"></div>
@@ -102,14 +174,9 @@
                         <div class="card-content">
                             <div class="card-visual">
                                 <div class="card-image-placeholder">
-                                    <svg viewBox="0 0 100 100" class="placeholder-icon">
-                                        <path d="M30 30 L70 30 L70 70 L30 70 Z" stroke="currentColor" stroke-width="2"
-                                            fill="none" />
-                                        <path d="M30 30 L50 20 L90 20 L70 30" stroke="currentColor" stroke-width="2"
-                                            fill="none" />
-                                        <path d="M70 70 L90 60 L90 20" stroke="currentColor" stroke-width="2"
-                                            fill="none" />
-                                    </svg>
+                                    <img src="/assets/images/generated/structural_profile_beam.png"
+                                        alt="Structural Profile" class="product-img-3d"
+                                        onerror="this.src='data:image/svg+xml;base64,...'">
                                 </div>
                             </div>
                             <div class="card-info">
@@ -139,11 +206,9 @@
                         <div class="card-content">
                             <div class="card-visual">
                                 <div class="card-image-placeholder">
-                                    <svg viewBox="0 0 100 100" class="placeholder-icon">
-                                        <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="2"
-                                            fill="none" />
-                                        <path d="M50 20 L50 80 M20 50 L80 50" stroke="currentColor" stroke-width="2" />
-                                    </svg>
+                                    <img src="/assets/images/generated/custom_extrusion_profile.png"
+                                        alt="Custom Extrusion" class="product-img-3d"
+                                        onerror="this.src='data:image/svg+xml;base64,...'">
                                 </div>
                                 <div class="hotspot" style="top: 50%; left: 50%;" data-tooltip="Custom Extrusion">
                                     <div class="hotspot-dot"></div>
@@ -268,35 +333,118 @@
 
         <!-- Footer -->
         <footer class="main-footer">
-            <div class="container footer-grid">
-                <div class="footer-col brand-col">
-                    <div class="logo">CURION <span class="text-primary">COMPOSITES</span></div>
-                    <p>Next-generation composite materials for a sustainable solar future.</p>
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <div class="container">
+                    <div class="newsletter-content">
+                        <div class="newsletter-text">
+                            <h3>Join the Innovation</h3>
+                            <p>Stay updated on the latest in composite solar technology.</p>
+                        </div>
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+            </div>
+
+            <div class="container footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col brand-col">
+                    <a href="/" class="footer-logo">
+                        <svg class="brand-logo" width="32" height="32" viewBox="0 0 40 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 5L33 12.5V27.5L20 35L7 27.5V12.5L20 5Z" stroke="var(--color-primary)"
+                                stroke-width="2.5" fill="rgba(211, 47, 47, 0.1)" />
+                            <path d="M20 12L27 16V24L20 28L13 24V16L20 12Z" fill="var(--color-primary)" />
+                        </svg>
+                        <div class="brand-text">
+                            <span class="brand-name">CURION</span>
+                            <span class="brand-suffix">COMPOSITES</span>
+                        </div>
+                    </a>
+                    <p class="brand-desc">Pioneering the future of solar infrastructure with advanced composite
+                        materials
+                        engineered for durability and performance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solutions Column -->
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/">Home</a></li>
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="/products.html">Composite Frames</a></li>
+                        <li><a href="/technology.html">Material Tech</a></li>
+                        <li><a href="#">Utility Scale</a></li>
+                        <li><a href="#">Rooftop Solar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
                         <li><a href="/about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News & Press</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
+
+                <!-- Legal Column -->
                 <div class="footer-col">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="/products.html">Composite Frames</a></li>
-                        <li><a href="/technology.html">Technology</a></li>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>info@curioncomposites.com</p>
-                    <p>+1 (555) 123-4567</p>
-                </div>
             </div>
+
             <div class="footer-bottom">
-                <div class="container">
+                <div class="container footer-bottom-inner">
                     <p>&copy; 2024 Curion Composites. All Rights Reserved.</p>
+                    <div class="footer-meta">
+                        <span>Designed for the Future</span>
+                    </div>
                 </div>
             </div>
         </footer>

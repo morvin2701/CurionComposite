@@ -3115,42 +3115,73 @@ section {
         text-align: center;
     }
 }
-/* --- PREMIUM PRODUCTS PAGE --- */
 
-/* Products Hero */
+/* --- PREMIUM PRODUCTS PAGE & CSS UTILITIES --- */
+
+/* Gradient Text */
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #b71c1c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Products Hero - Centering Fix */
 .products-hero {
-    padding: 120px 0 60px;
-    background: linear-gradient(to bottom, #f8f9fa, #fff);
+    padding: 140px 0 80px;
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f4f5 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.products-hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
-    margin-bottom: 1rem;
-    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
     color: var(--color-text);
+    line-height: 1.1;
+    text-transform: uppercase;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--color-text-muted);
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: 300;
 }
 
-/* Sticky Filter Nav */
+/* Sticky Filter Nav - Premium Glass */
 .sticky-nav-wrapper {
     position: sticky;
-    top: 80px; /* Adjust based on navbar height */
+    top: 80px;
     z-index: 90;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding: 1rem 0;
-    margin-bottom: 3rem;
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.2rem 0;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .product-filter-nav {
@@ -3162,84 +3193,82 @@ section {
 
 .filter-btn {
     background: transparent;
-    border: 1px solid rgba(0,0,0,0.1);
-    padding: 0.6rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.8rem 1.8rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--color-text-muted);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.filter-btn:hover, .filter-btn.active {
+.filter-btn:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
     background: var(--color-primary);
     color: #fff;
     border-color: var(--color-primary);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+    box-shadow: 0 8px 16px rgba(211, 47, 47, 0.25);
 }
 
-/* 3D Product Grid */
+/* 3D Product Grid Refinement */
 .product-grid-section {
-    padding: 2rem 0 6rem;
+    padding: 2rem 0 8rem;
 }
 
 .grid-3d {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2.5rem;
-    perspective: 1000px; /* Essential for 3D effect */
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 3rem;
+    perspective: 1200px;
 }
 
-/* 3D Card */
 .product-card-3d {
     background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.03);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.1s ease-out, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     height: 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    position: relative; /* Context for hotspots */
+    position: relative;
     transform-style: preserve-3d;
 }
 
 .product-card-3d:hover {
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08); /* Lift effect */
-    /* Transform handled by JS for tilt */
-}
-
-.card-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transform: translateZ(20px); /* Interior pop */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .card-visual {
-    height: 280px;
-    background: #f4f6f8;
+    height: 320px;
+    background: radial-gradient(circle at 50% 50%, #f9fafb, #eceff1);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .card-image-placeholder {
-    width: 60%;
-    height: 60%;
-    color: #cbd5e1;
-    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .product-card-3d:hover .card-image-placeholder {
-    transform: scale(1.05) translateZ(30px);
-    color: var(--color-primary);
+    transform: scale(1.08) translateZ(40px) translateY(-5px);
 }
 
 /* Hotspots */
@@ -3273,8 +3302,15 @@ section {
 }
 
 @keyframes hotspot-pulse {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(3); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
 }
 
 .hotspot::after {
@@ -3345,7 +3381,8 @@ section {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 2rem;
-    margin-top: auto; /* Push to bottom */
+    margin-top: auto;
+    /* Push to bottom */
 }
 
 .spec-item {
@@ -3381,20 +3418,20 @@ section {
     .hero-text h1 {
         font-size: 2.5rem;
     }
-    
+
     .sticky-nav-wrapper {
         top: 60px;
     }
-    
+
     .product-filter-nav {
         gap: 0.5rem;
     }
-    
+
     .filter-btn {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
     }
-    
+
     .grid-3d {
         grid-template-columns: 1fr;
         padding: 0 1rem;
