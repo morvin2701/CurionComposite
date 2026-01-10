@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curion Composites | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="noise-overlay"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <div id="app">
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">CURION <span class="text-primary">COMPOSITES</span></div>
+        <ul class="nav-links">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/products.html">Products</a></li>
+          <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="hero" class="premium-hero">
+      <!-- Video Carousel Background -->
+      <div class="hero-video-carousel">
+        <video class="hero-video active" autoplay muted loop playsinline>
+          <source
+            src="https://omo-oss-cdn.thefastfile.com/portal-saas/pg2024111518422443700/cms/vedio/cdc84cc5-fcd5-4451-af68-dc624cbdf6b1.mp4?sign=1768025954-7cdca00a70b0d575d54b77020a657e9d-0-5c4da302b1c8c3444990ea4d410c86bf&Expires=1768025954&Signature=Fo9eoM9-L2vdcGHuyfzn-YZudLlCjm9~0DTErgjPqZqaVii8A0QUCP0NH0pGaDoSEI0FjwP1E6thYxvt4-KhxFU3hU91PjUWp~ZW~-4RmTC8MmohsJQbTlDYdBWvOGudirD1qYUgXL9k54PcUHBXq2l92jm7WbuM~ZDd1n7viM-uBQYNHqXtPZMgFn2c~ZkpMR1nkJ71lhrg4xQJ63i5bhRCAT68rH0Mhd5MJU~MUgo~Xd1i2byBm07KFFK3CgME~NV6O1wd-mvb1Xv8JnjNt2C-Z6m-xrfrkYFIOsshzeyqlMrQ1S2rDZFwy7fGrsSTWxbSOzY~qzrEIFz2zh-4Qw&Key-Pair-Id=KITUBNZ25ERQX">
+        </video>
+        <video class="hero-video" muted loop playsinline>
+          <source
+            src="https://omo-oss-cdn.thefastfile.com/portal-saas/pg2024111518422443700/cms/vedio/e8b26205-a84e-4908-8b48-bbb53a7afdf6.mp4?sign=1768025954-ac116babab38e67a24d0ea10cdefc94a-0-56b92df0a26264126e4e50d47935d7c7&Expires=1768025954&Signature=mxvM-1yvNoFtaSBQ4uJjSaP4EM5x02iJ9bPnAtOlTt7zCt4s~4zcbyZDSUrTAxbFFHq88NtEnWXu6F5aUz0t3vRClgJkevXAGd8pLK43xZ5M0jOBp93D3zONn2pYQ7Pd71gxRMmas7Ix8M7ZADw7z-MetIndSA9VX1rGj2bWb8eO-z25lVef7H5REYwbQbOeWi2EaYLUOZXPxAfMK4Iio336PkN1dIdaAg0n0eLmL~SSJJJj6VrU6EGtwdUdrJagf1Rfg4DZ6oQXnZmS1QdXBP1FGeCdUl7-mNFk4iEuyNBoKEwuxv3lT32I47sNWWA12P6WJgkZ588lu2~Ux-CGdQ&Key-Pair-Id=KITUBNZ25ERQX">
+        </video>
+        <div class="carousel-overlay"></div>
+      </div>
+
+      <div class="container hero-content">
+        <span class="hero-tagline">NEXT-GENERATION MATERIALS</span>
+        <h1 class="hero-title">REDEFINING <span class="text-outline">SOLAR</span> <br> INFRASTRUCTURE</h1>
+        <p class="hero-subtitle">World-class Polyurethane Composite Frames designed for extreme durability and zero
+          corrosion.</p>
+        <div class="hero-actions">
+          <a href="/products.html" class="btn btn-primary">Discover Solutions</a>
+          <a href="/contact.html" class="btn btn-outline">Talk to an Expert</a>
+        </div>
+      </div>
+
+      <div class="hero-footer">
+        <div class="container hero-stats">
+          <div class="h-stat">
+            <span class="h-val">85%</span>
+            <span class="h-lbl">Lower Carbon</span>
+          </div>
+          <div class="h-divider"></div>
+          <div class="h-stat">
+            <span class="h-val">TÜV</span>
+            <span class="h-lbl">Certified Quality</span>
+          </div>
+          <div class="h-divider"></div>
+          <div class="h-stat">
+            <span class="h-val">25+</span>
+            <span class="h-lbl">Years Lifespan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile/Tablet Hero (Visible only on < 1024px) -->
+    <!-- Mobile/Tablet Hero (Visible only on < 1024px) -->
+    <section id="mobile-hero" class="mobile-hero">
+      <div class="mobile-hero-bg">
+        <video class="m-hero-video" autoplay muted loop playsinline poster="/assets/images/scenario-aesthetic.png">
+          <source src="/assets/images/future.mp4" type="video/mp4">
+        </video>
+        <div class="m-hero-overlay"></div>
+      </div>
+
+      <div class="container m-hero-content">
+        <span class="m-hero-tagline">FUTURE OF SOLAR</span>
+        <h1 class="m-hero-title">REDEFINING<br><span class="text-primary">DURABILITY</span></h1>
+
+        <!-- Key Points List -->
+        <div class="m-hero-points">
+          <div class="m-point-item">
+            <div class="m-point-icon">
+              <!-- Eye Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <div class="m-point-text">
+              <strong>OUR VISION</strong>
+              <span>To be a global leader in next-generation PU composite Solar frames.</span>
+            </div>
+          </div>
+
+          <div class="m-point-item">
+            <div class="m-point-icon">
+              <!-- Target Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="m-point-text">
+              <strong>OUR MISSION</strong>
+              <span>Enabling low-carbon infrastructure with UN SDG-aligned composite solutions.</span>
+            </div>
+          </div>
+
+          <div class="m-point-item">
+            <div class="m-point-icon">
+              <!-- Diamond Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 3h12l4 6-10 13L2 9z" />
+              </svg>
+            </div>
+            <div class="m-point-text">
+              <strong>OUR PURPOSE</strong>
+              <span>Creating long-term value with high-performance frames for a resilient future.</span>
+            </div>
+          </div>
+        </div>
+        <a href="/products.html" class="btn btn-primary m-hero-btn">Explore Solutions</a>
+
+        <!-- Premium Stats Row -->
+        <div class="m-hero-stats">
+          <div class="m-stat-item">
+            <span class="m-stat-val">50+</span>
+            <span class="m-stat-lbl">Years Life</span>
+          </div>
+          <div class="m-stat-divider"></div>
+          <div class="m-stat-item">
+            <span class="m-stat-val">30%</span>
+            <span class="m-stat-lbl">Lighter</span>
+          </div>
+          <div class="m-stat-divider"></div>
+          <div class="m-stat-item">
+            <span class="m-stat-val">0%</span>
+            <span class="m-stat-lbl">Corrosion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Marquee -->
+    <section id="partners" class="partners-section">
+      <div class="container">
+        <h4 class="small-title">Trusted By Global Leaders</h4>
+        <div class="marquee-wrapper">
+          <div class="marquee-content">
+            <span>LONGi Solar</span>
+            <span>JA Solar</span>
+            <span>Astronergy</span>
+            <span>ZNShine Solar</span>
+            <span>TW Solar</span>
+            <span>Trina Solar</span>
+            <span>Canadian Solar</span>
+            <!-- Duplicate for infinite loop -->
+            <span>LONGi Solar</span>
+            <span>JA Solar</span>
+            <span>Astronergy</span>
+            <span>ZNShine Solar</span>
+            <span>TW Solar</span>
+            <span>Trina Solar</span>
+            <span>Canadian Solar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="advantages" class="section-padding relative">
+      <!-- Subtle Pattern Background -->
+      <div class="bg-pattern"></div>
+
+      <div class="container relative z-10">
+        <div class="section-header text-center mb-5">
+          <h4 class="small-title">Performance Reinvented</h4>
+          <h2 class="section-title">KEY PERFORMANCE <span class="text-primary">ADVANTAGES</span></h2>
+          <p class="section-intro mx-auto">Advanced composite technology built for strength, stability, and efficiency.
+          </p>
+        </div>
+
+        <div class="grid-3 advantages-grid">
+          <!-- 1. Strength -->
+          <div class="advantage-card glass-panel">
+            <div class="card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Superior Tensile Strength</h3>
+              <p>Offers 4–4.5× higher tensile strength than aluminum, ensuring exceptional durability and structural
+                stability in extreme conditions.</p>
+            </div>
+          </div>
+
+          <!-- 2. Thermal -->
+          <div class="advantage-card glass-panel">
+            <div class="card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Thermal Expansion Compatibility</h3>
+              <p>Thermal expansion closely matches glass, reducing sealant failure and minimizing the risk of glass
+                cracking under temperature shifts.</p>
+            </div>
+          </div>
+
+          <!-- 3. Lightweight -->
+          <div class="advantage-card glass-panel">
+            <div class="card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                <line x1="16" y1="8" x2="2" y2="22"></line>
+                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Lightweight Construction</h3>
+              <p>Approximately 25% lighter than aluminum and 75% lighter than steel, enabling easier handling and faster
+                installation.</p>
+            </div>
+          </div>
+
+          <!-- 4. Insulation (PID) -->
+          <div class="advantage-card glass-panel">
+            <div class="card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Reduced PID (Electrically Insulating)</h3>
+              <p>Non-conductive material eliminates grounding requirements and prevents leakage currents, ensuring safer
+                operation.</p>
+            </div>
+          </div>
+
+          <!-- 5. Cost -->
+          <div class="advantage-card glass-panel">
+            <div class="card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Cost-Efficient System</h3>
+              <p>15–20% overall system savings compared to aluminum frames, making it a highly economical choice for
+                large-scale projects.</p>
+            </div>
+          </div>
+
+          <!-- 6. Precision -->
+          <div class="advantage-card glass-panel">
+            <div class="card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="22" y1="12" x2="18" y2="12"></line>
+                <line x1="6" y1="12" x2="2" y2="12"></line>
+                <line x1="12" y1="6" x2="12" y2="2"></line>
+                <line x1="12" y1="22" x2="12" y2="18"></line>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3>Design Flexibility & Precision</h3>
+              <p>Advanced pultrusion technology enables consistent profiles, tight tolerances, and customizable designs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Scenarios -->
+    <section id="scenarios" class="section-padding bg-darker relative">
+      <div class="container">
+        <div class="section-header text-center">
+          <h4 class="small-title">Versatile Applications</h4>
+          <h2 class="section-title">COMPOSITE FRAMES <span class="text-primary">APPLICATION SCENARIOS</span></h2>
+          <p class="section-intro mx-auto">The wide application can meet the demands of the market and has its unique
+            advantages in various fields.</p>
+        </div>
+
+        <div class="grid-4 scenarios-grid">
+          <!-- 1. Sea and Offshore -->
+          <div class="scenario-card">
+            <div class="scenario-img-wrapper">
+              <img src="/scenario-sea.png" alt="Offshore Solar" loading="lazy">
+              <div class="scenario-overlay">
+                <div class="overlay-content">
+                  <h3>SEA AND OFFSHORE</h3>
+                  <p>Superior corrosion resistance against salt mist and humid environments. High-strength composite
+                    material ensures structural integrity in harsh offshore conditions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Desert -->
+          <div class="scenario-card">
+            <div class="scenario-img-wrapper">
+              <img src="/scenario-desert.png" alt="Desert Solar" loading="lazy">
+              <div class="scenario-overlay">
+                <div class="overlay-content">
+                  <h3>DESERT</h3>
+                  <p>Strong load resistance with 100% rebound after load release. Thermal expansion matches glass,
+                    preventing deformation and module stress in extreme temperature shifts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Ice and Snow -->
+          <div class="scenario-card">
+            <div class="scenario-img-wrapper">
+              <img src="/scenario-snow.png" alt="Snow Solar" loading="lazy">
+              <div class="scenario-overlay">
+                <div class="overlay-content">
+                  <h3>ICE AND SNOW</h3>
+                  <p>Exceptional load-bearing capacity withstands heavy snow accumulation. Low thermal conductivity
+                    minimizes ice adhesion and maintains energy yield in freezing climates.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Black Aesthetics -->
+          <div class="scenario-card">
+            <div class="scenario-img-wrapper">
+              <img src="/scenario-aesthetic.png" alt="Black Aesthetic Solar" loading="lazy">
+              <div class="scenario-overlay">
+                <div class="overlay-content">
+                  <h3>BLACK AESTHETICS</h3>
+                  <p>Sleek, matte black finish for seamless integration with modern architecture. A premium,
+                    non-reflective choice for residential and commercial rooftops.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="section-padding bg-darker">
+      <div class="container">
+        <div class="split-layout">
+          <div class="text-content">
+            <h4 class="small-title">Next-Gen Materials</h4>
+            <h2 class="section-title">ENGINEERED FOR <span class="text-primary">PERFORMANCE</span></h2>
+            <p class="section-intro">Our advanced composite frames redefine utility-scale and rooftop solar
+              applications. Engineered to outperform traditional aluminum, they deliver unmatched durability in the
+              harshest environments.</p>
+
+            <ul class="tech-spec-list">
+              <li>
+                <span class="spec-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Ultra-Lightweight</strong>
+                  <span>30% lighter than aluminum, reducing structural load.</span>
+                </div>
+              </li>
+              <li>
+                <span class="spec-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Zero Corrosion</strong>
+                  <span>Impervious to salt mist, ammonia, and humidity.</span>
+                </div>
+              </li>
+              <li>
+                <span class="spec-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Superior Insulation</strong>
+                  <span>Non-conductive, eliminating PID issues.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="btn-group">
+              <a href="/products.html" class="btn btn-primary">View Products</a>
+              <a href="/technology.html" class="btn btn-outline">Technical Specs</a>
+            </div>
+          </div>
+
+          <div class="visual-content">
+            <div class="product-highlight-card glass-panel tech-border">
+              <div class="card-header-float">
+                <h3>Composite Frames</h3>
+                <span class="tech-badge">PATENTED</span>
+              </div>
+              <div class="image-glow-wrapper">
+                <img src="/assets/images/composite-frame.png" alt="Composite Solar Frame Structure"
+                  class="product-hero-img">
+                <div class="glow-effect"></div>
+              </div>
+              <div class="card-footer-specs">
+                <div class="mini-spec">
+                  <span>Tensile</span>
+                  <strong>High</strong>
+                </div>
+                <div class="mini-spec">
+                  <span>Expansion</span>
+                  <strong>Low</strong>
+                </div>
+                <div class="mini-spec">
+                  <span>Life</span>
+                  <strong>25+ Yrs</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Short About Teaser -->
+    <section class="teaser-section">
+      <div class="container grid-2 teaser-layout">
+        <div class="visual-placeholder parallax-img-container" style="background: transparent; padding: 0;">
+          <div class="teaser-image-wrapper">
+            <div class="teaser-glow"></div>
+            <video class="teaser-img" autoplay muted loop playsinline poster="/assets/composite-frame.png">
+              <source src="/assets/images/future.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div class="teaser-text-content">
+          <h4 class="small-title">Our Vision</h4>
+          <h2 class="section-title">The Future of <span class="text-primary">Infrastructure</span></h2>
+          <p>We are transforming the global renewable energy landscape by replacing traditional materials with
+            high-performance Polyurethane Composites. Our mission is to set a new standard for durability and
+            efficiency.</p>
+          <a href="/about.html" class="btn btn-primary">Discover Our Mission</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container footer-grid">
+        <div class="footer-col brand-col">
+          <div class="logo">CURION <span class="text-primary">COMPOSITES</span></div>
+          <p>Next-generation composite materials for a sustainable solar future.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products.html">Composite Frames</a></li>
+            <li><a href="/technology.html">Technology</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>info@curioncomposites.com</p>
+          <p>+1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2024 Curion Composites. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
