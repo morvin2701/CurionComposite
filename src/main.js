@@ -7,6 +7,8 @@ import { initThreeJS } from './three/scene.js';
 import { initUI } from './ui/interactions.js';
 import { initVideoCarousel } from './ui/videoCarousel.js';
 
+import { initBackgroundAnimation } from './ui/backgroundAnimation.js';
+
 console.log('Curion Composites App Initialized');
 
 // Initialize 3D Scene (Disabled per user request)
@@ -15,3 +17,4 @@ console.log('Curion Composites App Initialized');
 // Initialize UI (Tabs, Animations)
 initUI();
 initVideoCarousel();
+initBackgroundAnimation();

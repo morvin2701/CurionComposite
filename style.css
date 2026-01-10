@@ -70,6 +70,16 @@ body::before {
     pointer-events: none;
 }
 
+#premium-bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
 /* Base Styles */
 a {
     text-decoration: none;
