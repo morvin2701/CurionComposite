@@ -20,13 +20,85 @@
   <div id="app">
     <nav class="navbar">
       <div class="nav-container">
-        <div class="logo">CURION <span class="text-primary">COMPOSITES</span></div>
+        <a href="/" class="logo-wrapper">
+          <svg class="brand-logo" width="40" height="40" viewBox="0 0 40 40" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 5L33 12.5V27.5L20 35L7 27.5V12.5L20 5Z" stroke="var(--color-primary)" stroke-width="2.5"
+              fill="rgba(211, 47, 47, 0.1)" />
+            <path d="M20 12L27 16V24L20 28L13 24V16L20 12Z" fill="var(--color-primary)" />
+            <path d="M28 10L33 5M7 5L12 10M20 35V40" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5" />
+          </svg>
+          <div class="brand-text">
+            <span class="brand-name">CURION</span>
+            <span class="brand-suffix">COMPOSITES</span>
+          </div>
+        </a>
+
         <ul class="nav-links">
-          <li><a href="/" class="active">Home</a></li>
-          <li><a href="/products.html">Products</a></li>
-          <li><a href="/technology.html">Technology</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li>
+            <a href="/" class="active">
+              <span class="nav-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </span>
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/products.html">
+              <span class="nav-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </span>
+              <span class="nav-text">Products</span>
+            </a>
+          </li>
+          <li>
+            <a href="/technology.html">
+              <span class="nav-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </span>
+              <span class="nav-text">Technology</span>
+            </a>
+          </li>
+          <li>
+            <a href="/about.html">
+              <span class="nav-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </span>
+              <span class="nav-text">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact.html">
+              <span class="nav-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <span class="nav-text">Contact</span>
+            </a>
+          </li>
         </ul>
         <div class="hamburger">
           <span></span>
@@ -39,11 +111,70 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" style="display: none;">
       <ul class="mobile-nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/products.html">Products</a></li>
-        <li><a href="/technology.html">Technology</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li>
+          <a href="/">
+            <span class="nav-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </span>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/products.html">
+            <span class="nav-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </span>
+            Products
+          </a>
+        </li>
+        <li>
+          <a href="/technology.html">
+            <span class="nav-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </span>
+            Technology
+          </a>
+        </li>
+        <li>
+          <a href="/about.html">
+            <span class="nav-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </span>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="/contact.html">
+            <span class="nav-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            Contact
+          </a>
+        </li>
       </ul>
     </div>
 
