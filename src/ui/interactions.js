@@ -312,6 +312,31 @@ function initAboutAnimations() {
         });
     }
 
+    // New Premium Hero Reveal
+    const premiumTitle = document.querySelectorAll('.premium-hero-title .reveal-text');
+    if (premiumTitle.length) {
+        gsap.to(premiumTitle, {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.1,
+            ease: "power3.out",
+            delay: 0.2
+        });
+    }
+
+    const premiumSubtitle = document.querySelectorAll('.premium-hero-subtitle .reveal-text');
+    if (premiumSubtitle.length) {
+        gsap.to(premiumSubtitle, {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.1,
+            ease: "power3.out",
+            delay: 0.4
+        });
+    }
+
     // 2. Values Grid Stagger (Light Theme)
     const valueCards = document.querySelectorAll('.value-card-light');
     if (valueCards.length) {
