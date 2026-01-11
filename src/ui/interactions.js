@@ -11,6 +11,7 @@ export function initUI() {
     initMobileMenu();
     initProductInteractions();
     initTechAnimations();
+    initAboutAnimations();
 }
 
 function initProductInteractions() {
@@ -296,13 +297,89 @@ function initAnimations() {
     }
 }
 
+
+// V4: About Page Specific Motion
+function initAboutAnimations() {
+    // 1. Hero Title Reveal
+    const heroTitle = document.querySelector('.hero-v4-title');
+    if (heroTitle) {
+        gsap.from(heroTitle, {
+            y: 100,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power4.out",
+            delay: 0.2
+        });
+    }
+
+    // 2. Values Grid Stagger (Light Theme)
+    const valueCards = document.querySelectorAll('.value-card-light');
+    if (valueCards.length) {
+        gsap.from(valueCards, {
+            scrollTrigger: {
+                trigger: '.values-grid-light',
+                start: "top 80%"
+            },
+            y: 60,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+    }
+
+    // 3. Stats Strip Reveal
+    const statStrip = document.querySelector('.stats-counter-strip-light');
+    if (statStrip) {
+        gsap.from(statStrip, {
+            scrollTrigger: {
+                trigger: statStrip,
+                start: "top 85%"
+            },
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+    }
+
+    // 4. Image card interaction
+    const imageCard = document.querySelector('.image-card-premium');
+    if (imageCard) {
+        imageCard.addEventListener('mousemove', (e) => {
+            const rect = imageCard.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            gsap.to(imageCard.querySelector('img'), {
+                x: x * 20,
+                y: y * 20,
+                scale: 1.1,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        });
+
+        imageCard.addEventListener('mouseleave', () => {
+            gsap.to(imageCard.querySelector('img'), {
+                x: 0,
+                y: 0,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+    }
+}
+
 function initCounters() {
     // Animating numbers in the Manufacturing section
     // We need to target the Numbers in the stats-list
     // Since they are inside <strong> tags, let's target them.
 
     // First, let's give them data attributes to count to if they don't have them, or just parse text
-    const statNumbers = document.querySelectorAll('.stats-list strong');
+    // V4 Update: Target both old stats list and new counter-val
+    const statNumbers = document.querySelectorAll('.stats-list strong, .counter-val, .strip-stat');
 
     statNumbers.forEach(stat => {
         const originalText = stat.innerText; // e.g., "$285M", "50 GW"

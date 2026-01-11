@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curion Composites | About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&display=swap"
         rel="stylesheet">
@@ -13,142 +16,514 @@
 
 <body>
     <div class="noise-overlay"></div>
+    <canvas id="premium-bg-canvas"></canvas>
 
     <div id="app">
         <nav class="navbar">
-            <div class="container nav-container">
+            <div class="nav-container">
                 <a href="/" class="logo-wrapper">
                     <img src="/assets/images/logo.png" alt="Curion Composites" class="brand-logo-img">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products.html">Products</a></li>
-                    <li><a href="/technology.html">Technology</a></li>
-                    <li><a href="/about.html" class="active">About</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg></span><span class="nav-text">Home</span></a></li>
+                    <li><a href="/products.html"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg></span><span class="nav-text">Products</span></a></li>
+                    <li><a href="/technology.html"><span class="nav-icon"><svg width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg></span><span class="nav-text">Technology</span></a></li>
+                    <li><a href="/about.html" class="active"><span class="nav-icon"><svg width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg></span><span class="nav-text">About</span></a></li>
+                    <li><a href="/contact.html"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg></span><span class="nav-text">Contact</span></a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
-
-        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu" style="display: none;">
-            <ul class="mobile-nav-links">
-                <li>
-                    <a href="/">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                        </span>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="/products.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </span>
-                        Products
-                    </a>
-                </li>
-                <li>
-                    <a href="/technology.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                <polyline points="2 17 12 22 22 17"></polyline>
-                                <polyline points="2 12 12 17 22 12"></polyline>
-                            </svg>
-                        </span>
-                        Technology
-                    </a>
-                </li>
-                <li>
-                    <a href="/about.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="16" x2="12" y2="12"></line>
-                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                            </svg>
-                        </span>
-                        About
-                    </a>
-                </li>
-                <li>
-                    <a href="/contact.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </span>
-                        Contact
-                    </a>
-                </li>
-            </ul>
+            <!-- Mobile menu content matches index.html -->
         </div>
 
-        <section class="page-header">
-            <div class="container">
-                <h1>Our Story</h1>
-                <p>Pioneering the Future of Solar Infrastructure.</p>
+        <!-- Cinematic Hero Section -->
+        <section id="hero" class="video-hero-container">
+            <div class="video-hero-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="/assets/images/future.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-hero-overlay"></div>
+
+            <div class="video-hero-content container">
+                <h1 class="hero-title reveal-mask"><span class="text-gradient-silver reveal-text">ABOUT CURION</span>
+                </h1>
+                <p class="hero-subtitle reveal-mask"><span class="reveal-text">Pioneering the Future of Composite Solar
+                        Infrastructure</span></p>
             </div>
         </section>
 
-        <section id="about">
+        <!-- Manufacturing Overview -->
+        <section class="section-padding bg-light" style="padding-top: 8rem;">
             <div class="container">
-                <div class="grid-2">
-                    <div class="about-text">
-                        <h2 class="section-title">Who We Are</h2>
-                        <p>Curion Composites is transforming solar infrastructure with advanced PU composite materials.
-                            We replace traditional aluminum frames with solutions that are stronger, lighter, and more
-                            corrosion-resistant.</p>
-                        <br>
-                        <ul class="feature-list">
-                            <li><span class="marker"></span>High Strength-to-Weight Ratio</li>
-                            <li><span class="marker"></span>Superior Corrosion Resistance</li>
-                            <li><span class="marker"></span>Cost-Effective & Sustainable</li>
-                        </ul>
+                <div class="section-header text-center">
+                    <h2 class="section-title premium">PRODUCT OVERVIEW & <span class="text-primary">MANUFACTURING</span>
+                    </h2>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-item">
+                        <img src="/assets/images/pt3.jpeg" alt="PU Composite Solar Project">
+                        <div class="process-label">PU Composite Solar Project</div>
                     </div>
-                    <div class="about-visual">
-                        <div class="visual-box">Innovation Hub</div>
+                    <div class="process-item">
+                        <img src="/assets/images/composite-frame.png" alt="Composite Solar Module Frames">
+                        <div class="process-label">Composite Solar Module Frames</div>
+                    </div>
+                    <div class="process-item">
+                        <img src="/assets/images/pt2.jpeg" alt="PU Composite Mounting">
+                        <div class="process-label">PU Composite Mounting & Support</div>
+                    </div>
+                </div>
+
+                <div class="glass-panel-premium" style="margin-bottom: 5rem;">
+                    <div class="grid-2" style="gap: 3rem; align-items: start;">
+                        <div>
+                            <h3 class="text-primary" style="margin-bottom: 1rem; font-size: 1.8rem;">PULTRUSION PROCESS
+                            </h3>
+                            <p style="font-size: 1.1rem; color: var(--color-text-muted); line-height: 1.8;">
+                                Pultrusion is a continuous composite manufacturing process where <strong
+                                    style="color:var(--color-text)">glass fibers</strong> are resin impregnated, pulled
+                                through a heated die, and cured to form constant cross-section profiles.
+                            </p>
+                        </div>
+                        <div
+                            style="background: rgba(211,47,47,0.05); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--color-primary);">
+                            <h4 style="margin-bottom: 1rem;">KEY PROCESS ELEMENTS</h4>
+                            <ul class="feature-list">
+                                <li><span class="marker"></span>Continuous glass fiber rovings</li>
+                                <li><span class="marker"></span>Polyurethane resin system</li>
+                                <li><span class="marker"></span>Precision heated Steel molds</li>
+                                <li><span class="marker"></span>Automated pulling & cutting system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-5">
+                    <h3 class="section-title" style="font-size: 2.5rem;">RAW MATERIAL <span
+                            class="text-primary">SYSTEM</span></h3>
+                </div>
+
+                <div class="material-system-grid">
+                    <div class="material-card">
+                        <h3>Glass Fiber</h3>
+                        <p>Primary load-bearing skeleton; high tensile & flexural strength.</p>
+                    </div>
+                    <div class="material-card">
+                        <h3>Polyurethane Resin</h3>
+                        <p>Toughness, fatigue resistance, thermal stability.</p>
+                    </div>
+                    <div class="material-card">
+                        <h3>Protective Coating</h3>
+                        <p>UV resistance, aesthetics, abrasion protection.</p>
+                    </div>
+                    <div class="material-card">
+                        <h3>Surface Mat / Felt</h3>
+                        <p>Improved transverse strength and surface finish.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Vision & Mission Section -->
-        <section id="vision">
-            <div class="container center-text">
-                <h2 class="section-title">Our Core Purpose</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon">👁️</div>
-                        <h3>Vision</h3>
-                        <p>To be the global leader in PU composite solar frames for sustainable infrastructure.</p>
+        <!-- Design Considerations -->
+        <section class="section-padding bg-darker"
+            style="color: white; background-color: #0f0f0f; position: relative; overflow: hidden;">
+            <!-- decorative background elements -->
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 80% 20%, rgba(211,47,47,0.08), transparent 50%), radial-gradient(circle at 10% 80%, rgba(30,136,229,0.08), transparent 50%); pointer-events: none;">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="section-header text-center">
+                    <h2 class="section-title premium" style="color: white; border-left: none; padding-left: 0;">DESIGN
+                        CONSIDERATIONS <span class="text-gradient-red">FOR YOUR TEAM</span></h2>
+                    <p
+                        style="max-width: 800px; margin: 0 auto 4rem auto; opacity: 0.7; font-size: 1.15rem; line-height: 1.8;">
+                        Designed for performance and efficiency, our composite PV frames deliver exceptional strength,
+                        thermal stability, and long-term durability.
+                    </p>
+                </div>
+
+                <div class="section-dark-table-wrapper">
+                    <table class="table-dark-premium">
+                        <thead>
+                            <tr>
+                                <th>NO.</th>
+                                <th>PARAMETER</th>
+                                <th>SPECIFICATION</th>
+                                <th>SIGNIFICANCE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td class="highlight-text">Thermal Expansion Match</td>
+                                <td>6-10×10⁻⁶ /°C <small>(matches glass 9×10⁻⁶)</small></td>
+                                <td>Eliminates temperature-induced stress</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td class="highlight-text">Load Bearing</td>
+                                <td>4x aluminum strength</td>
+                                <td>Allows slimmer profiles for aesthetic appeal</td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td class="highlight-text">UV Resistance</td>
+                                <td>6000h xenon exposure</td>
+                                <td>Coating provides protection; no degradation</td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td class="highlight-text">Dimensional Tolerance</td>
+                                <td>±0.5 mm/m straightness</td>
+                                <td>Superior precision over aluminum</td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td class="highlight-text">Corner Joint Strength</td>
+                                <td>≥2200 N pull force</td>
+                                <td>Exceeds standard corner code values</td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td class="highlight-text">Grounding</td>
+                                <td>NOT REQUIRED</td>
+                                <td>Reduces BoM & installation complexity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparative Analysis -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title premium">COMPARATIVE <span class="text-primary">ANALYSIS</span></h2>
+                    <h4 class="small-title"
+                        style="margin-top: -3rem; margin-bottom: 3rem; color: var(--color-text-muted);">PU Composites
+                        vs. Aluminum Alloy (6063-T5)</h4>
+                </div>
+
+                <div class="table-premium-wrapper glass-panel-premium">
+                    <table class="table-premium">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>PU Composite</th>
+                                <th>Aluminum Alloy</th>
+                                <th>Advantage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tensile Strength</td>
+                                <td class="highlight-cell">1160 Mpa</td>
+                                <td>255 Mpa</td>
+                                <td>PU: 4.5x stronger</td>
+                            </tr>
+                            <tr>
+                                <td>Thermal Expansion</td>
+                                <td class="highlight-cell">6-10×10⁻⁶</td>
+                                <td>23×10⁻⁶</td>
+                                <td>PU: Matches glass; prevents cracking</td>
+                            </tr>
+                            <tr>
+                                <td>Weight (same section)</td>
+                                <td class="highlight-cell">Baseline</td>
+                                <td>+4% heavier</td>
+                                <td>PU is lighter</td>
+                            </tr>
+                            <tr>
+                                <td>Electrical Resistivity</td>
+                                <td class="highlight-cell">10¹⁴ Ω·cm (Insulating)</td>
+                                <td>Conductive</td>
+                                <td>PU: No grounding needed</td>
+                            </tr>
+                            <tr>
+                                <td>Corrosion Resistance</td>
+                                <td class="highlight-cell">Excellent</td>
+                                <td>Fair (requires coating)</td>
+                                <td>PU: Superior in salt spray</td>
+                            </tr>
+                            <tr>
+                                <td>Carbon Footprint</td>
+                                <td class="highlight-cell">~0.1-0.15 ton CO₂</td>
+                                <td>~1 ton CO₂</td>
+                                <td>PU: 80-90% lower emissions</td>
+                            </tr>
+                            <tr>
+                                <td>Lifespan</td>
+                                <td class="highlight-cell">25+ years</td>
+                                <td>15-20 years</td>
+                                <td>PU: Extended service life</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Carbon Footprint Visuals -->
+                <div class="carbon-grid">
+                    <div class="carbon-card glass-panel-premium">
+                        <span class="carbon-stat">1/8 to 1/10</span>
+                        <span class="carbon-label">Emissions vs Aluminum</span>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Mission</h3>
-                        <p>Enabling low-carbon infrastructure aligned with Net Zero 2070 targets.</p>
+                    <div class="carbon-card glass-panel-premium">
+                        <span class="carbon-stat">80-90%</span>
+                        <span class="carbon-label">Reduction in CO₂</span>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">💎</div>
-                        <h3>Values</h3>
-                        <p>Creating long-term value through durability and innovation.</p>
+                    <div class="carbon-card glass-panel-premium">
+                        <span class="carbon-stat">SGS</span>
+                        <span class="carbon-label">Certified Lifecycle</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications Tabs -->
+        <section class="section-padding bg-darker" style="background-color: #0b0b0b; position: relative;">
+            <!-- Subtle grid bg -->
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; opacity: 0.5;">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="section-header text-center">
+                    <h2 class="section-title premium" style="color: white; border-left: none; padding-left: 0;">MATERIAL
+                        <span class="text-gradient-red">SPECIFICATIONS</span></h2>
+                </div>
+
+                <div class="tabs-dark-premium-wrapper">
+                    <div class="tabs-header-dark">
+                        <button class="tab-btn-dark active" onclick="openTab(event, 'mech')">Mechanical</button>
+                        <button class="tab-btn-dark" onclick="openTab(event, 'thermal')">Thermal</button>
+                        <button class="tab-btn-dark" onclick="openTab(event, 'elec')">Electrical</button>
+                        <button class="tab-btn-dark" onclick="openTab(event, 'env')">Environmental</button>
+                    </div>
+
+                    <div class="tabs-content-dark">
+                        <!-- Mechanical Tab -->
+                        <div id="mech" class="tab-pane active" style="display: block;">
+                            <table class="table-dark-premium">
+                                <thead>
+                                    <tr>
+                                        <th>Property</th>
+                                        <th>Val (Composite)</th>
+                                        <th>Val (Aluminum)</th>
+                                        <th>Met?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tensile Strength</td>
+                                        <td class="highlight-text">1001-1160 MPa</td>
+                                        <td>255 MPa</td>
+                                        <td><span class="check-icon">✓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Flexural Strength</td>
+                                        <td class="highlight-text">1570 Mpa</td>
+                                        <td>-</td>
+                                        <td><span class="check-icon">✓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Flexural Modulus</td>
+                                        <td class="highlight-text">44.7 Gpa</td>
+                                        <td>-</td>
+                                        <td><span class="check-icon">✓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Barcol Hardness</td>
+                                        <td class="highlight-text">67 HBa</td>
+                                        <td>-</td>
+                                        <td><span class="check-icon">✓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Elastic Modulus</td>
+                                        <td class="highlight-text">52.1 GPa</td>
+                                        <td>70 GPa</td>
+                                        <td><span class="check-icon">✓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shear Strength</td>
+                                        <td class="highlight-text">60 Mpa</td>
+                                        <td>-</td>
+                                        <td><span class="check-icon">✓</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Thermal Tab -->
+                        <div id="thermal" class="tab-pane">
+                            <table class="table-dark-premium">
+                                <thead>
+                                    <tr>
+                                        <th>Property</th>
+                                        <th>Composite Value</th>
+                                        <th>Significance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Thermal Expansion</td>
+                                        <td class="highlight-text">6×10⁻⁶ /°C</td>
+                                        <td>Matches glass; prevents cracking</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heat Deflection</td>
+                                        <td class="highlight-text">265 °C</td>
+                                        <td>Maintains properties >200°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thermal Conductivity</td>
+                                        <td class="highlight-text">Lower than Al</td>
+                                        <td>Better insulation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Electrical Tab -->
+                        <div id="elec" class="tab-pane">
+                            <table class="table-dark-premium">
+                                <thead>
+                                    <tr>
+                                        <th>Property</th>
+                                        <th>Value</th>
+                                        <th>Note</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Volume Resistivity</td>
+                                        <td class="highlight-text">1x10¹⁴ - 1x10¹⁵ Ω·cm</td>
+                                        <td>Insulating</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Breakdown Voltage</td>
+                                        <td class="highlight-text">28+ kV</td>
+                                        <td>High Safety</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Grounding Required</td>
+                                        <td class="highlight-text">NO</td>
+                                        <td>Cost Saving</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Environmental Tab -->
+                        <div id="env" class="tab-pane">
+                            <div class="grid-2" style="gap: 2rem;">
+                                <table class="table-dark-premium">
+                                    <thead>
+                                        <tr>
+                                            <th>Test Type</th>
+                                            <th>Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Salt Spray (IEC 61701)</td>
+                                            <td class="highlight-text">High resistance</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Xenon Lamp Aging</td>
+                                            <td class="highlight-text">Minimal color change</td>
+                                        </tr>
+                                        <tr>
+                                            <td>UV Resistance</td>
+                                            <td class="highlight-text">Excellent retention</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wet/Freeze Resistance</td>
+                                            <td class="highlight-text">No degradation</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div
+                                    style="padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                    <h4 style="margin-bottom: 1.5rem; color: var(--color-primary);">Chemical Resistance
+                                    </h4>
+                                    <ul class="feature-list" style="color: rgba(255,255,255,0.8);">
+                                        <li><span class="marker"></span>Acids: Excellent (HCl 5%, HNO3)</li>
+                                        <li><span class="marker"></span>Bases: Excellent (NaOH 10%)</li>
+                                        <li><span class="marker"></span>Salts: Excellent</li>
+                                        <li><span class="marker"></span>Sealants: Resistant</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates -->
+        <section class="section-padding">
+            <div class="container text-center">
+                <h2 class="section-title premium">CERTIFICATES & <span class="text-primary">COMPLIANCE</span></h2>
+                <div class="cert-grid">
+                    <div class="cert-item glass-panel-premium">
+                        <!-- Placeholder for certificate images -->
+                        <div class="cert-logo"
+                            style="width: 60px; height: 80px; background: #ddd; margin-bottom: 1rem;"></div>
+                        <span class="cert-name">TÜV Rheinland</span>
+                    </div>
+                    <div class="cert-item glass-panel-premium">
+                        <div class="cert-logo"
+                            style="width: 60px; height: 80px; background: #ddd; margin-bottom: 1rem;"></div>
+                        <span class="cert-name">TÜV SUD</span>
+                    </div>
+                    <div class="cert-item glass-panel-premium">
+                        <div class="cert-logo"
+                            style="width: 60px; height: 80px; background: #ddd; margin-bottom: 1rem;"></div>
+                        <span class="cert-name">CSA</span>
+                    </div>
+                    <div class="cert-item glass-panel-premium">
+                        <div class="cert-logo"
+                            style="width: 60px; height: 80px; background: #ddd; margin-bottom: 1rem;"></div>
+                        <span class="cert-name">SGS</span>
                     </div>
                 </div>
             </div>
@@ -158,30 +533,17 @@
         <footer class="main-footer">
             <div class="container footer-grid">
                 <div class="footer-col brand-col">
-                    <a href="/" class="logo-wrapper">
+                    <a href="/" class="footer-logo">
                         <img src="/assets/images/logo.png" alt="Curion Composites" class="brand-logo-img">
                     </a>
-                    <p>Next-generation composite materials for a sustainable solar future.</p>
+                    <p class="brand-desc">Designing the future of solar infrastructure.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/">Home</a></li>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
                         <li><a href="/about.html">About Us</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="/products.html">Composite Frames</a></li>
-                        <li><a href="/technology.html">Technology</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>info@curioncomposites.com</p>
-                    <p>+1 (555) 123-4567</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -190,8 +552,26 @@
                 </div>
             </div>
         </footer>
-    </div>
-    <script type="module" src="/src/main.js"></script>
+
+        <script type="module" src="/src/main.js"></script>
+        <script>
+            // Simple tab switching logic for About page
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tab-pane");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tab-btn");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            // Expose to window for inline onclick
+            window.openTab = openTab;
+        </script>
 </body>
 
 </html>
