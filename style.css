@@ -4214,14 +4214,61 @@ section {
     /* Let's show a simplified version or just hide the complex grid */
     .hero-visual-right {
         display: flex;
-        /* Keep it visible but smaller */
-        height: 250px;
+        height: 350px;
+        /* Increased height for mobile visuals */
+        transform: scale(0.9);
+        margin-top: 2rem;
+    }
+
+    /* Fix Floating Cards on Mobile */
+    .floating-card {
+        padding: 0.8rem 1.2rem;
+        width: max-content;
+        max-width: 90%;
+        animation: floatMobile 6s ease-in-out infinite;
+    }
+
+    .card-1 {
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 0s;
+        z-index: 2;
+    }
+
+    .card-2 {
+        bottom: 10%;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center horizontally */
+        animation-delay: 3s;
+        z-index: 2;
+    }
+
+    /* Simplify Hex Grid on Mobile */
+    .tech-hex-grid {
+        opacity: 0.5;
+        transform: scale(0.8) perspective(1000px) rotateY(0deg) rotateX(10deg);
+        /* Reduce 3D effect */
     }
 
     .hero-stats-bar {
         flex-direction: column;
         gap: 1.5rem;
         padding: 1.5rem;
+    }
+
+    @keyframes floatMobile {
+
+        0%,
+        100% {
+            transform: translate(-50%, 0);
+        }
+
+        50% {
+            transform: translate(-50%, -15px);
+        }
     }
 
     .stat-separator {
@@ -4427,8 +4474,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4rem;
-    padding: 4rem 0;
+    gap: 8rem;
+    /* Increased gap for more negative space */
+    padding: 5rem 0;
 }
 
 .process-row.reverse {
@@ -4441,10 +4489,48 @@ section {
     padding-left: 2rem;
 }
 
+/* Premium Image Styling */
 .process-visual {
     flex: 1;
     display: flex;
     justify-content: center;
+    /* Center the smaller image */
+}
+
+.process-img-wrapper {
+    width: 100%;
+    max-width: 480px;
+    /* Constrain width */
+    aspect-ratio: 4/3;
+    /* Standard premium ratio */
+    overflow: hidden;
+    border-radius: 24px;
+    /* Smooth refined corners */
+    box-shadow:
+        0 20px 40px -10px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    /* Subtle border ring */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #fff;
+}
+
+.process-img-wrapper:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 30px 60px -12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(211, 47, 47, 0.1);
+}
+
+.process-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.process-img-wrapper:hover .process-img {
+    transform: scale(1.08);
+    /* Slow zoom effect */
 }
 
 /* Decorative vertical line concept could be added here if desired */
