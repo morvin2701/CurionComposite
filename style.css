@@ -2071,24 +2071,53 @@ section {
         transition: 0.3s;
     }
 
-    /* Mobile Menu Overlay - INSIDE MEDIA QUERY */
+    /* Mobile Menu Overlay - PREMIUM REDESIGN */
     .mobile-menu {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(10, 10, 12, 0.95);
+        /* Deep dark background */
         z-index: 10000 !important;
         display: flex !important;
-        /* Override global !important */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         visibility: visible !important;
         opacity: 0 !important;
-        /* Start hidden for animation */
         pointer-events: none !important;
-        transition: opacity 0.4s ease;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow: hidden;
+    }
+
+    /* Background Animation Element */
+    .mobile-menu::before {
+        content: '';
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle at 50% 50%, rgba(211, 47, 47, 0.15) 0%, transparent 50%);
+        top: -25%;
+        left: -25%;
+        z-index: -1;
+        animation: pulseGradient 8s ease-in-out infinite alternate;
+        pointer-events: none;
+    }
+
+    @keyframes pulseGradient {
+        0% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
     }
 
     .mobile-menu.active {
@@ -2101,51 +2130,85 @@ section {
         text-align: center;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
+        position: relative;
+        z-index: 2;
+        width: 100%;
     }
 
     .mobile-nav-links li {
         overflow: hidden;
+        position: relative;
     }
 
     .mobile-nav-links a {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
-        font-family: var(--font-family-heading);
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #1a1a1a;
+        gap: 1.5rem;
+        font-family: 'Orbitron', sans-serif;
+        /* Premium Heading Font */
+        font-size: 2rem;
+        font-weight: 700;
+        color: #ffffff;
         text-transform: uppercase;
         text-decoration: none;
-        transition: color 0.3s;
-        /* Initial state for potential animation */
-        transform: translateY(100%);
+        letter-spacing: 2px;
+        transition: color 0.3s ease;
+
+        /* Animation State */
+        transform: translateY(100%) skewY(5deg);
         opacity: 0;
-        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, color 0.3s ease;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, color 0.3s ease;
     }
 
     .mobile-nav-links .nav-icon {
         color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, filter 0.3s ease;
     }
 
+    .mobile-nav-links a:hover {
+        color: var(--color-primary);
+    }
+
+    .mobile-nav-links a:hover .nav-icon {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(211, 47, 47, 0.6));
+    }
+
+    /* Active State Animation */
     .mobile-menu.active .mobile-nav-links a {
-        transform: translateY(0);
+        transform: translateY(0) skewY(0);
         opacity: 1;
     }
 
-    /* Stagger delays for links */
+    /* Staggered Delays */
     .mobile-menu.active .mobile-nav-links li:nth-child(1) a {
         transition-delay: 0.1s;
     }
 
     .mobile-menu.active .mobile-nav-links li:nth-child(2) a {
-        transition-delay: 0.2s;
+        transition-delay: 0.15s;
     }
 
     .mobile-menu.active .mobile-nav-links li:nth-child(3) a {
+        transition-delay: 0.2s;
+    }
+
+    .mobile-menu.active .mobile-nav-links li:nth-child(4) a {
+        transition-delay: 0.25s;
+    }
+
+    .mobile-menu.active .mobile-nav-links li:nth-child(5) a {
         transition-delay: 0.3s;
+    }
+
+    .mobile-menu.active .mobile-nav-links li:nth-child(6) a {
+        transition-delay: 0.35s;
     }
 
     .mobile-menu.active .mobile-nav-links li:nth-child(4) a {
