@@ -10,6 +10,7 @@ export function initUI() {
     initSpotlight();
     initMobileMenu();
     initProductInteractions();
+    initTechAnimations();
 }
 
 function initProductInteractions() {
@@ -125,6 +126,49 @@ function initMobileMenu() {
         });
     });
 }
+
+// Technology Page Animations
+function initTechAnimations() {
+    // Animate Process Rows
+    const processRows = document.querySelectorAll('.process-row');
+
+    if (processRows.length > 0) {
+        processRows.forEach((row, index) => {
+            gsap.from(row, {
+                scrollTrigger: {
+                    trigger: row,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: index * 0.1, // Stagger effect if close together
+                ease: "power3.out"
+            });
+        });
+    }
+
+    // Animate Glass Specs Table Rows
+    const specRows = document.querySelectorAll('.glass-table tr');
+    if (specRows.length > 0) {
+        gsap.from(specRows, {
+            scrollTrigger: {
+                trigger: '.glass-table',
+                start: "top 85%"
+            },
+            y: 20,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "power2.out"
+        });
+    }
+}
+
+// Export initialization function if using modular JS, or call it here
+// Make sure to call initTechAnimations() in main.js
+export { initMobileMenu, initTechAnimations };
 
 function initSpotlight() {
     const cards = document.querySelectorAll('.card, .product-item, .step-card, .visual-box');
