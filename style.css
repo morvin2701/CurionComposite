@@ -3081,8 +3081,7 @@ section {
 
     .newsletter-content {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
         gap: 1.5rem;
     }
 
@@ -3094,29 +3093,11 @@ section {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        text-align: center;
-    }
-
-    .footer-col {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-logo {
-        justify-content: center;
+        padding: 3rem 0;
     }
 
     .brand-desc {
         max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .social-links {
-        justify-content: center;
     }
 
     .footer-bottom-inner {
@@ -3423,21 +3404,62 @@ section {
     gap: 0.8rem;
 }
 
-/* Mobile Products */
+/* --- VIEW UTILITIES --- */
+.mobile-view {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2rem;
-        word-break: break-word;
-        /* Ensure long words break */
-        overflow-wrap: break-word;
-        padding: 0 1rem;
-        /* Prevent edge touching */
-        line-height: 1.2;
+    .desktop-view {
+        display: none !important;
+        /* Hide desktop elements on mobile */
     }
 
-    .products-hero .hero-text p {
-        font-size: 1rem;
-        padding: 0 1rem;
+    .mobile-view {
+        display: block !important;
+        /* Show mobile elements */
+    }
+}
+
+/* --- MOBILE HERO SPECIFIC STYLES --- */
+#mobile-products-hero.products-hero {
+    padding: 150px 1rem 60px;
+    /* Specific mobile padding */
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f4f5 100%);
+    text-align: center;
+}
+
+#mobile-products-hero .hero-text h1 {
+    font-size: 2.2rem;
+    /* Perfect size for mobile */
+    line-height: 1.3;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+#mobile-products-hero .hero-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    /* Fix Watermark on Mobile */
+    .manufacturing-section::before {
+        font-size: 6rem !important;
+        /* Proper visible size */
+        top: 10% !important;
+        /* Moved higher up */
+        left: 50% !important;
+        transform: translate(-50%, 0) rotate(-5deg) !important;
+        opacity: 0.08;
+        /* Slightly more visible */
+        width: 100%;
+        text-align: center;
     }
 
     .sticky-nav-wrapper {
