@@ -3,174 +3,461 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curion Composites | Contact</title>
+    <title>Curion Composites | Contact Protocol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Inline overrides for specific Contact Page uniqueness if needed, 
+           but mostly will go in style.css */
+    </style>
 </head>
 
-<body>
+<body class="contact-body-tech">
     <div class="noise-overlay"></div>
+    <!-- We can reuse the canvas or create a new one for specific contact animations -->
+    <canvas id="contact-bg-canvas"></canvas>
 
     <div id="app">
         <nav class="navbar">
-            <div class="container nav-container">
+            <div class="nav-container">
                 <a href="/" class="logo-wrapper">
                     <img src="/assets/images/logo.png" alt="Curion Composites" class="brand-logo-img">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products.html">Products</a></li>
-                    <li><a href="/technology.html">Technology</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/contact.html" class="active">Contact</a></li>
+                    <li><a href="/"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg></span><span class="nav-text">Home</span></a></li>
+                    <li><a href="/products.html"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg></span><span class="nav-text">Products</span></a></li>
+                    <li><a href="/technology.html"><span class="nav-icon"><svg width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg></span><span class="nav-text">Technology</span></a></li>
+                    <li><a href="/about.html"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg></span><span class="nav-text">About</span></a></li>
+                    <li><a href="/contact.html" class="active"><span class="nav-icon"><svg width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg></span><span class="nav-text">Contact</span></a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
+        <div class="mobile-menu" style="display: none;"></div>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu" style="display: none;">
-            <ul class="mobile-nav-links">
-                <li>
-                    <a href="/">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                        </span>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="/products.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </span>
-                        Products
-                    </a>
-                </li>
-                <li>
-                    <a href="/technology.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                <polyline points="2 17 12 22 22 17"></polyline>
-                                <polyline points="2 12 12 17 22 12"></polyline>
-                            </svg>
-                        </span>
-                        Technology
-                    </a>
-                </li>
-                <li>
-                    <a href="/about.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="16" x2="12" y2="12"></line>
-                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                            </svg>
-                        </span>
-                        About
-                    </a>
-                </li>
-                <li>
-                    <a href="/contact.html">
-                        <span class="nav-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </span>
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <!-- HERO: Massive Typography + Tech Overlay -->
+        <header class="contact-hero-tech">
+            <div class="hero-bg-grid"></div>
+            <div class="container hero-content-tech">
+                <div class="hero-label-tech">:: SYSTEM COMMUNICATION ::</div>
+                <h1 class="glitch-text" data-text="INITIATE">INITIATE</h1>
+                <h1 class="glitch-text sub" data-text="CONTACT">CONTACT</h1>
+                <p class="hero-desc-tech">
+                    Direct line to Curion Engineering & Sales. <br>
+                    Response time: &lt; 24h. Secure transmission.
+                </p>
+            </div>
+            <div class="scroll-prompt-tech">
+                <div class="mouse-icon"></div>
+                <span>SCROLL TO ENGAGE</span>
+            </div>
+        </header>
 
-        <section class="page-header">
+        <!-- SEC 1: Quick Access Grid (HUD Style) -->
+        <section class="section-padding bg-black">
             <div class="container">
-                <h1>Get In Touch</h1>
-                <p>Let's Build the Future Together.</p>
+                <div class="hud-grid">
+                    <!-- Card 1: Sales -->
+                    <div class="hud-card">
+                        <div class="hud-corner top-left"></div>
+                        <div class="hud-corner top-right"></div>
+                        <div class="hud-corner bottom-left"></div>
+                        <div class="hud-corner bottom-right"></div>
+                        <div class="hud-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>COMMERCIAL</h3>
+                        <p>Project quotes, partnership inquiries, and bulk orders.</p>
+                        <a href="mailto:sales@curioncomposites.com" class="link-tech">sales@curioncomposites.com <span
+                                class="arrow">→</span></a>
+                    </div>
+
+                    <!-- Card 2: Tech Support -->
+                    <div class="hud-card highlight">
+                        <div class="hud-corner top-left"></div>
+                        <div class="hud-corner top-right"></div>
+                        <div class="hud-corner bottom-left"></div>
+                        <div class="hud-corner bottom-right"></div>
+                        <div class="hud-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>TECHNICAL</h3>
+                        <p>Material specs, engineering data, and integration support.</p>
+                        <a href="mailto:tech@curioncomposites.com" class="link-tech">tech@curioncomposites.com <span
+                                class="arrow">→</span></a>
+                    </div>
+
+                    <!-- Card 3: HQ -->
+                    <div class="hud-card">
+                        <div class="hud-corner top-left"></div>
+                        <div class="hud-corner top-right"></div>
+                        <div class="hud-corner bottom-left"></div>
+                        <div class="hud-corner bottom-right"></div>
+                        <div class="hud-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>HEADQUARTERS</h3>
+                        <p>Plot 45, GIDC Phase III, Vapi, Gujarat, India - 396195</p>
+                        <a href="#" class="link-tech">View on Map <span class="arrow">→</span></a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="container footer-content">
-                <div class="brand-footer">
-                    <h2>CORPORATE OFFICE</h2>
-                    <address>
-                        <strong>Curion Composites Pvt. Ltd.</strong><br>
-                        Industrial Park, Vadodara,<br>
-                        Gujarat, India - 390001
-                        <br><br>
-                        <a href="mailto:ravindra@curioncomposites.com">ravindra@curioncomposites.com</a>
-                        <br>
-                        <a href="tel:+919876543210">+91 98765 43210</a>
-                    </address>
+        <!-- SEC 1.5: Department Directory -->
+        <section class="section-padding bg-light-alt">
+            <div class="container">
+                <div class="section-header-tech">
+                    <span class="tech-overline">:: INTERNAL ROUTING ::</span>
+                    <h2 class="tech-title">DEPARTMENT <span class="text-primary">DIRECTORY</span></h2>
                 </div>
-                <div class="contact-form-wrapper">
-                    <h3>Send an Inquiry</h3>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Business Email" required>
-                        <input type="text" placeholder="Company" required>
-                        <textarea placeholder="Message / Project Details" rows="4"></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+
+                <div class="directory-grid">
+                    <div class="dir-item">
+                        <span class="dir-code">DEP-01 // SALES</span>
+                        <h4>Commercial Projects</h4>
+                        <p>For utility-scale inquiries and tender documentation.</p>
+                        <a href="mailto:sales@curioncomposites.com" class="dir-link">sales@curioncomposites.com</a>
+                        <span class="dir-phone">+91 98765 43210</span>
+                    </div>
+                    <div class="dir-item">
+                        <span class="dir-code">DEP-02 // ENGINEERING</span>
+                        <h4>R&D Application</h4>
+                        <p>Technical specifications, load data, and customization.</p>
+                        <a href="mailto:engineering@curioncomposites.com"
+                            class="dir-link">engineering@curioncomposites.com</a>
+                        <span class="dir-phone">+91 98765 43211</span>
+                    </div>
+                    <div class="dir-item">
+                        <span class="dir-code">DEP-03 // LOGISTICS</span>
+                        <h4>Supply Chain</h4>
+                        <p>Order tracking, shipping schedules, and delivery.</p>
+                        <a href="mailto:logistics@curioncomposites.com"
+                            class="dir-link">logistics@curioncomposites.com</a>
+                        <span class="dir-phone">+91 98765 43212</span>
+                    </div>
+                    <div class="dir-item">
+                        <span class="dir-code">DEP-04 // CORPORATE</span>
+                        <h4>Media & PR</h4>
+                        <p>Press kits, interview requests, and investor relations.</p>
+                        <a href="mailto:media@curioncomposites.com" class="dir-link">media@curioncomposites.com</a>
+                        <span class="dir-phone">+91 98765 43213</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEC 1.8: Facility Access Info -->
+        <section class="section-padding bg-white">
+            <div class="container">
+                <div class="access-layout">
+                    <div class="access-info">
+                        <div class="section-header-tech">
+                            <span class="tech-overline">:: PHYSICAL ACCESS ::</span>
+                            <h2 class="tech-title">VISITOR <span class="text-primary">PROTOCOLS</span></h2>
+                        </div>
+                        <p class="tech-desc">
+                            All visits to the manufacturing facility must be scheduled 48 hours in advance.
+                            Valid government identification is required for entry clearance.
+                        </p>
+
+                        <ul class="access-list">
+                            <li>
+                                <span class="status-icon success"></span>
+                                <div>
+                                    <strong>Visitor Center Hours</strong>
+                                    <span>Mon - Fri: 0900 - 1700 IST</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="status-icon warning"></span>
+                                <div>
+                                    <strong>Safety Gear</strong>
+                                    <span>Required for Production Floor (Provided)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="status-icon info"></span>
+                                <div>
+                                    <strong>Parking</strong>
+                                    <span>Zone B - Visitor Allocations Available</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-panel">
+                        <h3 class="panel-title">COMMON INQUIRIES</h3>
+                        <div class="faq-item">
+                            <div class="faq-q">What is the standard lead time for bulk orders?</div>
+                            <div class="faq-a">Production cycles typically range from 2-4 weeks depending on order
+                                volume and current capacity load.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-q">Do you provide sample kits for testing?</div>
+                            <div class="faq-a">Yes. Engineering sample kits (ESK-24) are available upon request for
+                                qualified commercial partners.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-q">Is custom profile extrusion available?</div>
+                            <div class="faq-a">Our R&D division accepts custom die requests. Tooling development
+                                typically requires 6-8 weeks.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEC 2: The Command Center (Form) -->
+        <section class="section-padding bg-darker" style="position: relative;">
+            <div class="tech-lines-bg"></div>
+            <div class="container">
+                <div class="command-layout">
+                    <!-- Left: Status Panel -->
+                    <div class="status-panel">
+                        <div class="panel-header">
+                            <div class="blinking-dot"></div>
+                            <span>OPERATIONAL STATUS</span>
+                        </div>
+                        <div class="status-content">
+                            <div class="stat-row">
+                                <span class="label">LOCATION</span>
+                                <span class="value">GUJARAT, IND</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="label">COORDS</span>
+                                <span class="value">20.3893° N, 72.9106° E</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="label">TIMEZONE</span>
+                                <span class="value">IST (UTC+05:30)</span>
+                            </div>
+
+                            <div class="mini-map-tech">
+                                <!-- Abstract "Radar" Animation -->
+                                <div class="radar-sweep"></div>
+                                <div class="grid-lines"></div>
+                            </div>
+
+                            <div class="contact-methods-list">
+                                <div class="method-item">
+                                    <span class="icon">📞</span>
+                                    <span>+91 98765 43210</span>
+                                </div>
+                                <div class="method-item">
+                                    <span class="icon">📠</span>
+                                    <span>+91 260 123456</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Transmission Form -->
+                    <div class="transmission-panel">
+                        <div class="form-header-tech">
+                            <h2>TRANSMISSION FORM</h2>
+                            <div class="decorative-bar"></div>
+                        </div>
+                        <form class="tech-form">
+                            <div class="input-group-tech">
+                                <label>IDENTIFIER // NAME</label>
+                                <input type="text" placeholder="Enter Full Designation" required>
+                                <div class="input-border"></div>
+                            </div>
+                            <div class="input-group-tech">
+                                <label>COMM CHANNEL // EMAIL</label>
+                                <input type="email" placeholder="name@company.com" required>
+                                <div class="input-border"></div>
+                            </div>
+                            <div class="input-group-tech">
+                                <label>SUBJECT // TOPIC</label>
+                                <select>
+                                    <option>General Inquiry</option>
+                                    <option>Project Quotation</option>
+                                    <option>Technical Support</option>
+                                    <option>Partnership Proposal</option>
+                                </select>
+                                <div class="input-border"></div>
+                            </div>
+                            <div class="input-group-tech full-width">
+                                <label>MESSAGE DATA</label>
+                                <textarea rows="6" placeholder="Enter transmission content..."></textarea>
+                                <div class="input-border"></div>
+                            </div>
+                            <button type="submit" class="btn-tech-submit">
+                                <span class="btn-text">INITIATE TRANSMISSION</span>
+                                <div class="btn-glitch"></div>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
+        <!-- Footer -->
         <footer class="main-footer">
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <div class="container">
+                    <div class="newsletter-content">
+                        <div class="newsletter-text">
+                            <h3>Join the Innovation</h3>
+                            <p>Stay updated on the latest in composite solar technology.</p>
+                        </div>
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <div class="container footer-grid">
+                <!-- Brand Column -->
                 <div class="footer-col brand-col">
-                    <a href="/" class="logo-wrapper">
+                    <a href="/" class="footer-logo">
                         <img src="/assets/images/logo.png" alt="Curion Composites" class="brand-logo-img">
                     </a>
-                    <p>Next-generation composite materials for a sustainable solar future.</p>
+                    <p class="brand-desc">Pioneering the future of solar infrastructure with advanced composite
+                        materials
+                        engineered for durability and performance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Solutions Column -->
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/">Home</a></li>
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="/products.html">Composite Frames</a></li>
+                        <li><a href="/technology.html">Material Tech</a></li>
+                        <li><a href="#">Utility Scale</a></li>
+                        <li><a href="#">Rooftop Solar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
                         <li><a href="/about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News & Press</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
+
+                <!-- Legal Column -->
                 <div class="footer-col">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="/products.html">Composite Frames</a></li>
-                        <li><a href="/technology.html">Technology</a></li>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>info@curioncomposites.com</p>
-                    <p>+1 (555) 123-4567</p>
-                </div>
             </div>
+
             <div class="footer-bottom">
-                <div class="container">
+                <div class="container footer-bottom-inner">
                     <p>&copy; 2024 Curion Composites. All Rights Reserved.</p>
+                    <div class="footer-meta">
+                        <span>Designed for the Future</span>
+                    </div>
                 </div>
             </div>
         </footer>
+
     </div>
     <script type="module" src="/src/main.js"></script>
 </body>
