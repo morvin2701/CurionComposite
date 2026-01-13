@@ -67,8 +67,86 @@
                 </div>
             </div>
         </nav>
-        <div class="mobile-menu" style="display: none;">
-            <!-- Mobile menu content matches index.html -->
+
+        <!-- MOBILE/TABLET HERO SECTION FOR ALL PAGES -->
+        <section class="mobile-hero-section">
+            <div class="mobile-hero-container">
+                <div class="mobile-hero-content">
+                    <span class="mobile-hero-overline">ABOUT US</span>
+                    <h1 class="mobile-hero-title">Leading <span class="text-gradient">Innovation</span></h1>
+                    <p class="mobile-hero-subtitle">
+                        Learn about our journey in developing advanced composite materials that shape industries
+                        worldwide.
+                    </p>
+                    <div class="mobile-hero-buttons">
+                        <a href="/products.html" class="btn btn-primary-mobile">Our Products</a>
+                        <a href="/contact.html" class="btn btn-secondary-mobile">Contact Us</a>
+                    </div>
+                </div>
+                <div class="mobile-hero-visual">
+                    <div class="mobile-hero-decor"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li>
+                    <a href="/">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/products.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/technology.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        <span>Technology</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
         </div>
 
         <!-- Cinematic Hero Section -->
@@ -420,6 +498,7 @@
         window.openLightbox = openLightbox;
         window.closeLightbox = closeLightbox;
     </script>
+    <script src="./src/mobile-hero.js"></script>
 </body>
 
 </html>
