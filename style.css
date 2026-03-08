@@ -5601,6 +5601,14 @@ section {
     -webkit-text-fill-color: transparent;
 }
 
+.section-title.centered {
+    border-left: none !important;
+    padding-left: 0 !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100%;
+}
+
 .section-title.premium {
     font-size: 3.5rem;
     letter-spacing: -1px;
@@ -5609,12 +5617,17 @@ section {
     margin-bottom: 4rem;
 }
 
-.section-title.premium::after {
+.section-title.premium.centered {
+    display: block;
+}
+
+.section-title.premium::after,
+.section-title.centered::after {
     content: '';
     position: absolute;
     bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     width: 60px;
     height: 4px;
     background: var(--color-primary);
