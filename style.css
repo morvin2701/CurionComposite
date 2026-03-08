@@ -9893,44 +9893,123 @@ section {
 }
 
 /* Responsive Editorial Layout */
+@media (max-width: 1200px) {
+    .me-container {
+        gap: 3rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .me-container {
         grid-template-columns: 1fr;
         gap: 4rem;
+        max-width: 800px;
     }
 
     .me-sticky-column {
         position: relative;
         top: 0;
-        gap: 2rem;
+        gap: 2.5rem;
+    }
+
+    .me-header-wrapper {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .me-eyebrow {
+        justify-content: center;
     }
 
     .me-editorial-title {
-        font-size: 3.5rem;
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+
+    .me-tech-graphic {
+        height: 100px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .me-marquee-content span {
+        font-size: 1.25rem;
     }
 
     .me-scrolling-column {
         padding-top: 0;
-        padding-bottom: 0;
-        gap: 2rem;
+        padding-bottom: 5rem;
+        gap: 2.5rem;
     }
 
     .card-offset-1 {
         transform: translateX(0);
+        animation: me-card-float 7s ease-in-out infinite alternate-reverse;
     }
 
     .me-editorial-card:hover.card-offset-1 {
-        transform: translateY(-5px);
+        transform: translateY(-8px);
     }
 }
 
 @media (max-width: 768px) {
+    .me-editorial-section {
+        padding: 6rem 0;
+    }
+
+    .me-editorial-title {
+        font-size: 2.25rem;
+    }
+
+    /* Handle forced breaks on mobile */
+    .me-editorial-title br {
+        display: none;
+    }
+
+    .me-editorial-title::after {
+        content: "";
+        display: block;
+    }
+
     .me-editorial-card {
-        padding: 2.5rem 2rem;
+        padding: 2.5rem 2rem 2.5rem 2.5rem;
+        /* Balanced padding */
     }
 
     .me-card-lead {
         font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .me-card-body {
+        font-size: 0.95rem;
+    }
+
+    .me-tech-graphic {
+        height: 80px;
+    }
+
+    .me-marquee-content span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .me-editorial-title {
+        font-size: 1.85rem;
+    }
+
+    .me-editorial-card {
+        padding: 2rem 1.5rem 2rem 2rem;
+    }
+
+    .me-card-accent {
+        width: 3px;
+    }
+
+    .me-marquee-content {
+        gap: 1.5rem;
     }
 }
 
