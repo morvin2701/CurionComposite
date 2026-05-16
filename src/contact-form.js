@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.6';
 
-        // Simulate API call (replace with actual endpoint)
+        // Send to service
         try {
-            await simulateFormSubmission(data);
+            await submitToService(data);
 
             // Success
             showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
@@ -173,14 +173,34 @@ function showNotification(message, type = 'info') {
     }, 4000);
 }
 
-async function simulateFormSubmission(data) {
-    // Simulate network delay
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            console.log('Form submitted:', data);
-            resolve();
-        }, 1500);
+async function submitToService(data) {
+    // We use Web3Forms as a professional, static-site friendly way to send emails
+    // to ravindra@curioncomposites.com without needing a dedicated backend server.
+    
+    const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            access_key: "7b4a4caa-9305-4fb8-b948-fd5664991451", // Activated live key
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            subject: `New Inquiry: ${data.subject} - ${data.name}`,
+            message: data.message,
+            from_name: "Curion Composites Website",
+            to_email: "ravindra@curioncomposites.com"
+        })
     });
+
+    const result = await response.json();
+    if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Submission failed');
+    }
+    
+    return result;
 }
 
 // Add animation styles

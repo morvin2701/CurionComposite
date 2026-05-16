@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/images/Curion%20Favicon%20Icon%20White.png" />
+    <title>Curion Composites | Insights & Innovation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <canvas id="premium-bg-canvas"></canvas>
+
+    <div id="app">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="logo-wrapper">
+                    <img src="/assets/images/logo_1.png" alt="Curion Composites" class="brand-logo-img">
+                </a>
+                <ul class="nav-links">
+                    <li>
+                        <a href="/">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products.html">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about.html">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                            </span>
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog.html" class="active">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Blog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact.html">
+                            <span class="nav-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </span>
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" style="display: none;">
+            <ul class="mobile-nav-links">
+                <li><a href="/"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>Home</a></li>
+                <li><a href="/products.html"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></span>Products</a></li>
+                <li><a href="/about.html"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></span>About</a></li>
+                <li><a href="/blog.html"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></span>Blog</a></li>
+                <li><a href="/contact.html"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>Contact</a></li>
+            </ul>
+        </div>
+
+        <main class="blog-main-premium">
+            <!-- FEATURED ARTICLE -->
+            <div class="featured">
+                <div class="container">
+                    <div class="featured-grid glass-panel">
+                        <div class="featured-image">
+                            <div class="img-wrapper img-engineering">
+                                <!-- Image placeholder background in CSS -->
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="content-inner">
+                                <p class="featured-tag">Engineering</p>
+                                <h2 class="featured-title">Redefining Solar Durability: The Rise of Polyurethane Composites</h2>
+                                <p class="featured-excerpt">For decades, aluminum has been the default material for solar panel framing — cheap, abundant, and easy to manufacture. But aluminum comes with a hidden cost: it corrodes, expands in heat, and fails prematurely in coastal and desert environments where solar demand is highest.<br><br>Curion's pultruded polyurethane composite profiles are changing that equation. With a thermal expansion coefficient 60% lower than aluminum and zero susceptibility to galvanic corrosion, composite frames are now outlasting aluminum structures by 10–15 years in accelerated aging tests.</p>
+                                <a href="#" class="read-btn">
+                                    Read full article
+                                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                            </div>
+                            <div class="featured-meta">
+                                <div class="featured-meta-info">
+                                    <strong>Dr. Ankit Rathore</strong><br>
+                                    Head of Materials R&D · June 2, 2024 · 9 min read
+                                </div>
+                                <span class="featured-status">Featured</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FILTER BAR -->
+            <div class="filter-bar">
+                <div class="container filter-container">
+                    <div class="filter-pills">
+                        <button class="pill active">All</button>
+                        <button class="pill">Technical</button>
+                        <button class="pill">Sustainability</button>
+                        <button class="pill">Company News</button>
+                    </div>
+                    <div class="search-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        <input type="text" placeholder="Search articles...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ARTICLES GRID -->
+            <div class="articles">
+                <div class="container">
+                    <div class="articles-grid">
+
+                        <!-- WIDE CARD -->
+                        <div class="article-card wide glass-panel">
+                            <div class="card-img img-sustainability"></div>
+                            <div class="card-body">
+                                <p class="card-tag">Sustainability</p>
+                                <h3 class="card-title">The Carbon Footprint of Solar Framing: Why the Material You Choose Matters as Much as the Panel</h3>
+                                <p class="card-excerpt">The photovoltaic industry has spent two decades perfecting cell efficiency while almost entirely ignoring one critical factor: the embodied carbon of the structural components that hold those cells in place.<br><br>A standard aluminum extrusion frame contributes 42 kg CO₂-equivalent per panel across its lifetime — accounting for extraction, smelting, fabrication, and end-of-life disposal. Curion's glass-fibre reinforced polyurethane composite frames reduce that number by up to 85%, to just 6.3 kg CO₂-equivalent.</p>
+                                <div class="card-footer">
+                                    <span>May 15, 2024 · 11 min read</span>
+                                    <a href="#" class="read-btn">Read more <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SINGLE CARD -->
+                        <div class="article-card glass-panel">
+                            <div class="card-img img-technical"></div>
+                            <div class="card-body">
+                                <p class="card-tag">Technical</p>
+                                <h3 class="card-title">Zero Corrosion: The Molecular Science Behind Composite Resilience</h3>
+                                <p class="card-excerpt">Corrosion is the silent killer of solar infrastructure. In coastal zones, saline air attacks aluminum frames within 3–5 years, creating micro-fractures that compromise structural integrity.</p>
+                                <div class="card-footer">
+                                    <span>May 10, 2024 · 8 min read</span>
+                                    <a href="#" class="read-btn">Read more <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SINGLE CARD -->
+                        <div class="article-card glass-panel">
+                            <div class="card-img img-news"></div>
+                            <div class="card-body">
+                                <p class="card-tag">Company News</p>
+                                <h3 class="card-title">Expanding Global Manufacturing: Our Phase 2 Roadmap for the Indian Solar Market</h3>
+                                <p class="card-excerpt">India's solar sector added 18.5 GW of capacity in 2023 alone — and the government's target of 500 GW by 2030 means the pace will only accelerate.</p>
+                                <div class="card-footer">
+                                    <span>May 5, 2024 · 5 min read</span>
+                                    <a href="#" class="read-btn">Read more <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SINGLE CARD -->
+                        <div class="article-card glass-panel">
+                            <div class="card-img img-engineering"></div>
+                            <div class="card-body">
+                                <p class="card-tag">Engineering</p>
+                                <h3 class="card-title">Wind Load Testing at 200 km/h: How Composite Frames Outperform Steel</h3>
+                                <p class="card-excerpt">When Cyclone Biparjoy made landfall in June 2023, it exposed a fundamental weakness in conventional solar mounting systems — metal frames buckle asymmetrically.</p>
+                                <div class="card-footer">
+                                    <span>April 28, 2024 · 10 min read</span>
+                                    <a href="#" class="read-btn">Read more <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SINGLE CARD -->
+                        <div class="article-card glass-panel">
+                            <div class="card-img img-sustainability"></div>
+                            <div class="card-body">
+                                <p class="card-tag">Sustainability</p>
+                                <h3 class="card-title">End-of-Life Planning for Solar Composites: Are We Building a Waste Problem?</h3>
+                                <p class="card-excerpt">Thermoset composites are extraordinarily durable — but that durability creates an end-of-life challenge. Unlike aluminum, which is infinitely recyclable.</p>
+                                <div class="card-footer">
+                                    <span>April 18, 2024 · 7 min read</span>
+                                    <a href="#" class="read-btn">Read more <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SINGLE CARD -->
+                        <div class="article-card glass-panel">
+                            <div class="card-img img-technical-2"></div>
+                            <div class="card-body">
+                                <p class="card-tag">Technical</p>
+                                <h3 class="card-title">Pultrusion vs. Hand Layup: Why Fibre Orientation Changes Everything</h3>
+                                <p class="card-excerpt">Not all composite manufacturing processes are equal — and the difference between pultrusion and hand layup isn't just about speed. It's about physics.</p>
+                                <div class="card-footer">
+                                    <span>April 8, 2024 · 9 min read</span>
+                                    <a href="#" class="read-btn">Read more <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-newsletter">
+                <div class="container">
+                    <div class="newsletter-content">
+                        <div class="newsletter-text">
+                            <h3>Join the Innovation</h3>
+                            <p>Stay updated on the latest in composite solar technology.</p>
+                        </div>
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col brand-col">
+                    <a href="/" class="footer-logo">
+                        <img src="/assets/images/logo_1.png" alt="Curion Composites" class="brand-logo-img">
+                    </a>
+                    <p class="brand-desc">Pioneering the future of solar infrastructure with advanced composite materials engineered for durability and performance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solutions Column -->
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="/products.html">Composite Frames</a></li>
+                        <li><a href="#">Utility Scale</a></li>
+                        <li><a href="#">Rooftop Solar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News & Press</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container footer-bottom-inner">
+                    <p>&copy; 2024 Curion Composites. All Rights Reserved.</p>
+                    <div class="footer-meta">
+                        <span>Designed for the Future</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+        <!-- Full Article Modal -->
+        <div id="article-modal" class="article-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container glass-panel">
+                <button class="modal-close" aria-label="Close Modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+                <div class="modal-content-wrapper">
+                    <div id="modal-image" class="modal-hero-img"></div>
+                    <div class="modal-body-content">
+                        <p id="modal-tag" class="featured-tag"></p>
+                        <h1 id="modal-title" class="featured-title"></h1>
+                        <div id="modal-meta" class="featured-meta-info"></div>
+                        <div id="modal-text" class="modal-text-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/mobile-hero.js"></script>
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('article-modal');
+            const closeBtn = modal.querySelector('.modal-close');
+            const overlay = modal.querySelector('.modal-overlay');
+
+            const toSentenceCase = (str) => {
+                return str.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
+            };
+
+            const openModal = (data) => {
+                document.getElementById('modal-title').innerText = toSentenceCase(data.title);
+                document.getElementById('modal-tag').innerText = data.tag;
+                document.getElementById('modal-meta').innerHTML = data.meta;
+                document.getElementById('modal-text').innerHTML = data.content;
+                document.getElementById('modal-image').style.backgroundImage = data.image;
+                
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            document.querySelectorAll('.read-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const card = btn.closest('.featured-grid') || btn.closest('.article-card');
+                    if (!card) return;
+
+                    const imageElement = card.querySelector('.img-wrapper, .card-img');
+                    const computedStyle = window.getComputedStyle(imageElement);
+                    const bgImage = computedStyle.backgroundImage;
+
+                    const data = {
+                        title: card.querySelector('.featured-title, .card-title').innerText,
+                        tag: card.querySelector('.featured-tag, .card-tag').innerText,
+                        meta: card.querySelector('.featured-meta-info, .card-footer span')?.innerHTML || 'Curion Editorial · June 2024',
+                        content: card.querySelector('.featured-excerpt, .card-excerpt').innerHTML + '<br><br>Continuing the research, Curion Composites has benchmarked these materials against industry standards... [Full content would be fetched from a CMS in a production environment].',
+                        image: bgImage
+                    };
+                    openModal(data);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', closeModal);
+        });
+    </script>
+</body>
+
+</html>

@@ -12,6 +12,7 @@ export function initUI() {
     initProductInteractions();
     initTechAnimations();
     initAboutAnimations();
+    initNewsletterForm();
 }
 
 function initProductInteractions() {
@@ -435,5 +436,58 @@ function initCounters() {
                 }
             });
         }
+    });
+}
+function initNewsletterForm() {
+    const newsletterForms = document.querySelectorAll('.newsletter-form');
+    
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const emailInput = form.querySelector('input[type="email"]');
+            const submitBtn = form.querySelector('button');
+            const originalIcon = submitBtn.innerHTML;
+            
+            if (!emailInput.value) return;
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            submitBtn.innerHTML = '<span style="font-size: 10px;">...</span>';
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        access_key: "7b4a4caa-9305-4fb8-b948-fd5664991451",
+                        subject: "New Newsletter Subscription",
+                        from_name: "Curion Website Newsletter",
+                        email: emailInput.value,
+                        message: `A new user has subscribed to the newsletter: ${emailInput.value}`
+                    })
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    emailInput.value = '';
+                    emailInput.placeholder = "Thank you for subscribing!";
+                    setTimeout(() => {
+                        emailInput.placeholder = "Enter your email address";
+                    }, 3000);
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                console.error('Newsletter error:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.innerHTML = originalIcon;
+            }
+        });
     });
 }
