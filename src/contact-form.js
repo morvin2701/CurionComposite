@@ -135,8 +135,10 @@ function showFieldError(field, message) {
     errorDiv.textContent = message;
     errorDiv.style.cssText = `
         color: #d32f2f;
-        font-size: 0.85rem;
-        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        margin-top: 4px;
+        position: relative;
+        display: block;
         animation: slideDown 0.3s ease;
     `;
 
