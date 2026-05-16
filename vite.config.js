@@ -10,6 +10,7 @@ export default defineConfig({
                 technology: resolve(__dirname, 'technology.html'),
                 about: resolve(__dirname, 'about.html'),
                 contact: resolve(__dirname, 'contact.html'),
+                blog: resolve(__dirname, 'blog.html'),
             },
         },
     },
