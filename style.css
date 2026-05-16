@@ -11276,6 +11276,70 @@ section {
     }
 }
 
+@media (max-width: 768px) {
+    .blog-main-premium {
+        padding-top: 80px;
+    }
+
+    .blog-main-premium .container {
+        padding: 0 20px;
+    }
+
+    .img-wrapper {
+        min-height: 240px;
+    }
+
+    .featured-content {
+        padding: 30px 20px;
+    }
+
+    .featured-title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .featured-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 24px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .filter-pills {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    .filter-pills::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .search-wrap {
+        width: 100%;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-body {
+        padding: 24px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+}
+
 /* Article Modal Styles */
 .article-modal {
     position: fixed;
