@@ -55,11 +55,11 @@
                                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
                                 </svg></span><span class="nav-text">About</span></a></li>
                     <li><a href="/blog.html"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                 </svg></span><span class="nav-text">Blog</span></a></li>
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                </svg></span><span class="nav-text">Blog</span></a></li>
                     <li><a href="/contact.html" class="active"><span class="nav-icon"><svg width="20" height="20"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -266,38 +266,36 @@
                             <form class="premium-form" id="contactForm">
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <input type="text" id="name" name="name" required placeholder=" ">
                                         <label for="name">Full Name</label>
-                                        <div class="focus-border"></div>
+                                        <input type="text" id="name" name="name" required placeholder="John Doe">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" id="email" name="email" required placeholder=" ">
                                         <label for="email">Email Address</label>
-                                        <div class="focus-border"></div>
+                                        <input type="email" id="email" name="email" required
+                                            placeholder="john@company.com">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <input type="tel" id="phone" name="phone" placeholder=" ">
                                         <label for="phone">Phone Number</label>
-                                        <div class="focus-border"></div>
+                                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
                                     </div>
                                     <div class="form-group">
+                                        <label for="subject">Subject</label>
                                         <select id="subject" name="subject" required>
-                                            <option value="" disabled selected>Select Subject</option>
+                                            <option value="" disabled selected>Select Inquiry Type</option>
                                             <option value="general">General Inquiry</option>
                                             <option value="sales">Sales & Quotation</option>
                                             <option value="support">Technical Support</option>
                                             <option value="partnership">Partnership</option>
                                             <option value="careers">Careers</option>
                                         </select>
-                                        <div class="focus-border"></div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                                     <label for="message">Your Message</label>
-                                    <div class="focus-border"></div>
+                                    <textarea id="message" name="message" rows="5" required
+                                        placeholder="How can we help you?"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <div class="checkbox-group">

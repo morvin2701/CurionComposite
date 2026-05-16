@@ -134,12 +134,15 @@ function showFieldError(field, message) {
     errorDiv.className = 'error-message';
     errorDiv.textContent = message;
     errorDiv.style.cssText = `
-        color: #d32f2f;
-        font-size: 0.75rem;
-        margin-top: 4px;
-        position: relative;
-        display: block;
+        color: #dc2626; /* Modern red */
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 4px;
         animation: slideDown 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
     `;
 
     field.parentElement.appendChild(errorDiv);
@@ -178,7 +181,7 @@ function showNotification(message, type = 'info') {
 async function submitToService(data) {
     // We use Web3Forms as a professional, static-site friendly way to send emails
     // to ravindra@curioncomposites.com without needing a dedicated backend server.
-    
+
     const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -201,7 +204,7 @@ async function submitToService(data) {
     if (!response.ok || !result.success) {
         throw new Error(result.message || 'Submission failed');
     }
-    
+
     return result;
 }
 
